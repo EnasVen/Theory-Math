@@ -25,5 +25,7 @@ PCA為Principle Component Analysis的縮寫，意即主成分分析。
 以下計算避免資料過於稀疏，所需要的數據量：  
 假設第1個特徵的範圍為(0,1)，我們希望訓練資料的特徵值範圍佔整體特徵值範圍的20%。  
 那麼在1維的case下，訓練樣本的數量為整體數量的20%。  
-而在2維的case下，所需訓練樣本數量則為44.72%。(因為https://latex.codecogs.com/png.image?\dpi{110}\sqrt{0.2}\doteq&space;0.4472 )  
-在3維的case下，所需訓練樣本數量則為58.48%。
+而在2維的case下，所需訓練樣本數量則為44.72%。(因為 <img src="https://latex.codecogs.com/gif.image?\dpi{110}\sqrt{0.2}\doteq&space;0.4472" title="https://latex.codecogs.com/gif.image?\dpi{110}\sqrt{0.2}\doteq 0.4472" />)  
+在3維的case下，所需訓練樣本數量則為58.48%。(因為 <img src="https://latex.codecogs.com/gif.image?\dpi{110}0.2^{\frac{1}{3}}\doteq&space;0.5848" title="https://latex.codecogs.com/gif.image?\dpi{110}0.2^{\frac{1}{3}}\doteq 0.5848" />)  
+  
+也就是說，當訓練樣本數量固定時，貿然增加特徵數量會導致維度災難。  
