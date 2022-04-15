@@ -20,4 +20,18 @@ m個特徵維度：<img src="https://latex.codecogs.com/gif.image?\dpi{110}x_{i}
 而我們要做的就是找到一個v使得總變異最大!用數學來說就是:  
 <img src="https://latex.codecogs.com/svg.image?v=\underset{\left\|v\right\|=1,v\in&space;\mathbb{R}^{m}}{argmax}v^{T}Cov_{x}v" />  
 
+# 線性代數觀點 - Part3  
+有了上面的限制式，我們使用Lagrange Multiplier求解:  
+<img src="https://latex.codecogs.com/svg.image?L(v,\lambda)=v^{T}Cov_{x}v-\lambda(v^{T}v-1)"/>  
+  
+將上述式子分別對兩參數偏微分:  
+<img src="https://latex.codecogs.com/svg.image?\frac{\partial&space;L(v,\lambda)}{\partial&space;v}=2Cov_xv-2\lambda&space;v=2(Cov_x-\lambda&space;v)=0&space;\Rightarrow&space;Cov_xv=\lambda&space;v"/>  
+<img src="https://latex.codecogs.com/svg.image?\frac{\partial&space;L(v,\lambda)}{\partial&space;\lambda&space;}=v^{T}v-1=0&space;\Rightarrow&space;\left\|v\right\|=1" />  
+根據上面的結果，其實就是求解共變異矩陣的eigenvalue和eigenvector!  
+  
+我們將偏微分結果代回原本的共變異矩陣會得到:  
+<img src="https://latex.codecogs.com/svg.image?\sum&space;=&space;&space;v^{T}Cov_xv&space;=&space;v^{T}\lambda&space;v&space;=&space;\lambda&space;" />  
+(因為v為單位向量)  
+  
+而得到的eigenvalue和eigenvector分別為 : 萃取特徵變異量以及最大變異投影軸!
 
