@@ -17,7 +17,27 @@ VIF值用來偵測共線性是否存在於變數之間，其定義為:
 ![Image](https://github.com/EnasVen/Theory-Math/blob/main/Ridge_Lasso_ElasticNet/Regularization01.png)  
   
 # L2 - Regularization  
-在loss function後面加上平方和懲罰項即為L2-Regularization的作法:  
-<img src="https://latex.codecogs.com/gif.image?\dpi{110}L&space;=&space;L_{0}&plus;\frac{\lambda&space;}{2n}\sum_{\omega&space;}^{}\omega&space;^2" />  
+在cost function後面加上平方和懲罰項即為L2-Regularization的作法:  
+<img src="https://latex.codecogs.com/gif.image?\dpi{110}C&space;=&space;C_{0}&plus;\frac{\lambda&space;}{2n}\sum_{\omega&space;}^{}\omega&space;^2" />  
   
 我們將上式對參數微分可以得到以下:  
+<img src="https://latex.codecogs.com/gif.image?\dpi{110}\frac{\partial&space;C}{\partial&space;w}=\frac{\partial&space;C_0}{\partial&space;w}&plus;\frac{\lambda&space;}{n}w"/>  
+  
+w參數更新過程可以寫成:  
+<img src="https://latex.codecogs.com/gif.image?\dpi{110}w&space;\rightarrow&space;w-\eta&space;\frac{\partial&space;C_0}{\partial&space;w}-\frac{\eta&space;\lambda&space;}{n}w=(1-\frac{\lambda}{n})w-\eta&space;\frac{\partial&space;C_0}{\partial&space;w}" />  
+  
+在過擬合的模型內，參數係數通常都會特別大，可直觀理解為fit函數必須在極小的區間內擬合每一個資料點，因此w必須非常大。  
+  
+# L1 - Regularization  
+在cost function後面加上絕對值懲罰項即為L1-Regularization的作法:    
+<img src="https://latex.codecogs.com/gif.image?\dpi{110}C=C_0&plus;\frac{\lambda&space;}{n}\sum_{w}^{}\left|w&space;\right|" />  
+  
+我們將上式對參數微分可以得到以下:  
+<img src="https://latex.codecogs.com/gif.image?\dpi{110}\frac{\partial&space;C}{\partial&space;w}=\frac{\partial&space;C_0}{\partial&space;w}&plus;\frac{\lambda&space;}{n}sgn(w)" />  
+  
+w參數更新過程可以寫成:  
+<img src="https://latex.codecogs.com/gif.image?\dpi{110}w\to&space;w-\frac{\eta&space;\lambda&space;}{n}sgn(w)-\eta&space;\frac{\partial&space;C_0}{\partial&space;w}" />  
+  
+L1正則化的效果可以把參數往0點縮減，如下圖:  
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/Ridge_Lasso_ElasticNet/Regularization02.png)  
+  
