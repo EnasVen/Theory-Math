@@ -5,7 +5,7 @@
   
 兩者具有以下的差異:  
 第1個差異：迴歸樹在每一個葉節點都會得到預測值，代表該節點之平均。  
-第2個差異：迴歸樹在衡量最佳切割屬性和切割值使用平方誤差而非Gini。(忘記Gini Index的可以先閱讀Information Theory~)  
+第2個差異：迴歸樹在衡量最佳切割屬性和切割值使用平方誤差而非Gini Impurity。(忘記Gini Index的可以先閱讀Information Theory~)  
  
 決策樹常使用Entropy、Gini Impurity和MSE計算分割的criterion。  
 根據分割前後，下降最多的指標值就是最佳分割屬性!  
@@ -28,3 +28,7 @@
 (註2) errror rate有其閥值(顯著水準0.25)，使用z檢定來判斷是否需要修剪。  
 (註3) ID3使用資訊增益會造成獨立指標的過度分類情形。(例如:產品序號)  
 (註4) C5.0使用boosting手法，其演算法未公開。  
+  
+ # Example  
+ 以下自行建構了一個例子供參考，我們選用的分割指標為Gini Impurity:  
+ ![Image](https://github.com/EnasVen/Theory-Math/blob/main/Decision%20Tree/DecisionTree_Img04.png)  
