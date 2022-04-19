@@ -13,7 +13,7 @@
   
 # 發展史(History)
 決策樹一路改良的歷史過程如下:  
-![Image](https://github.com/EnasVen/Theory-Math/blob/main/Decision%20Tree/DecisionTree_Img01.png)  
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/Decision%20Tree/DecisionTree_Img03.png)  
 目前最常用的是CART。  
   
 # 修剪(Prune)  
@@ -31,4 +31,4 @@
   
  # Example  
  以下自行建構了一個例子供參考，我們選用的分割指標為Gini Impurity:  
- ![Image](https://github.com/EnasVen/Theory-Math/blob/main/Decision%20Tree/DecisionTree_Img04.png)  
+ ![Image](https://github.com/EnasVen/Theory-Math/blob/main/Decision%20Tree/DecisionTree_Img02.png)  
