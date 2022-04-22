@@ -36,7 +36,15 @@
   
 <img src="https://latex.codecogs.com/png.image?\dpi{110}D_{KL}(P||Q)&space;\\=\sum_{x}-p(x)ln(\frac{q(x)}{p(x)})\\=\sum_{x}p(x)ln(\frac{p(x)}{q(x)})\\=\sum_{x}p(x)ln(p(x))-\sum_{x}p(x)ln(q(x))&space;\\=&space;-H(X)&space;&plus;&space;CrossEntropy(P,Q)" />
   
+因此量測KLD等價於量測 CrossEntropy !!  
+
 # Gini Impurity  
-
-
+數學解釋 : 用來描述資料集獲系統的混亂程度(不純度高低)，越大代表資料越混雜。  
+定義:  
+假設資料集S含有n個類別，pi為各類別比例。  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}Gini(S)=\sum_{i=1}^{n}p_i(1-p_i)=1-\sum_{i=1}^{n}p_i^2"/>
 # Gini Gain  
+數學解釋 : 用來計算分類的好壞程度(不純度差距)，越大越好(代表分類越純)。
+定義:  
+假設資料集S使用某個特徵A來進行分類，共分成多個子集Si  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}GiniGain(S,A)=Gini(S)-Gini(S,A)=Gini(S)-\sum_{i=1}^{n}\frac{len(S_i)}{len(S)}*Gini(S_i)"/>
