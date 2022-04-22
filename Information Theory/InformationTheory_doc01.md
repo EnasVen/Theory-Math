@@ -48,3 +48,5 @@
 定義:  
 假設資料集S使用某個特徵A來進行分類，共分成多個子集Si  
 <img src="https://latex.codecogs.com/png.image?\dpi{110}GiniGain(S,A)=Gini(S)-Gini(S,A)=Gini(S)-\sum_{i=1}^{n}\frac{len(S_i)}{len(S)}*Gini(S_i)"/>
+  
+下面提供兩個例子計算Gini Impurity 與 Entropy:  
