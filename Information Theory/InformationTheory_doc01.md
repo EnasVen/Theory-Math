@@ -3,7 +3,7 @@
 數學解釋 : 衡量資料(隨機變數)的凌亂程度(資訊量/不確定性)。  
 定義 : 隨機變數X的Entropy定為  
 <img src="https://latex.codecogs.com/gif.image?\dpi{110}H(X)=E(I(X))=E(-ln(P(X)))=\sum_{i}^{}-P(x_i)ln(P(x_i))"/>  
-![Image]("https://github.com/EnasVen/Theory-Math/blob/main/Information%20Theory/Information_Img01.png")  
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/Information%20Theory/Information_Img01.png)  
 
 下面我會將Information Theory內相關的指標定義列出來!  
   
@@ -51,3 +51,5 @@
 <img src="https://latex.codecogs.com/png.image?\dpi{110}GiniGain(S,A)=Gini(S)-Gini(S,A)=Gini(S)-\sum_{i=1}^{n}\frac{len(S_i)}{len(S)}*Gini(S_i)"/>
   
 下面提供兩個例子計算Gini Impurity 與 Entropy:  
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/Information%20Theory/Information_Img02.png)  
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/Information%20Theory/Information_Img03.png)  
