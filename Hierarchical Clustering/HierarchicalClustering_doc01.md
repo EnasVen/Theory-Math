@@ -24,3 +24,15 @@ Minkowski 距離:
 <img src="https://latex.codecogs.com/png.image?\dpi{110}d(x,y)=\sum_{i=1}^{p}((\left|x_i-y_i\right|)^m)^{\frac{1}{m}}"/>  
 Manhattan距離:  
 <img src="https://latex.codecogs.com/png.image?\dpi{110}d(x,y)=\sum_{i=1}^{p}\left|x_i-y_i\right|"/>  
+  
+# Linkage  
+在階層式分群內，Linkage為測量群距的度量方法。常用的有3種:  
+**single linkage**:採用最小距離  
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/Hierarchical%20Clustering/Hie_Img02.png)  
+**complete inkage**:採用最大距離  
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/Hierarchical%20Clustering/Hie_Img03.png)  
+**average linkage**:採用平均距離  
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/Hierarchical%20Clustering/Hie_Img04.png)  
+  
+# Example  
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/Hierarchical%20Clustering/Hie_Img05.png)  
