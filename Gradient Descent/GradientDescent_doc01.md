@@ -33,3 +33,29 @@
 沒有做數據標準化的GD，由於loss func. contour不規則，其梯度方向可能多變，造成收斂困難。  
 而有做數據標準化的GD，loss func. contour較像同心圓，其梯度方向朝向圓心，收斂速度更快。  
 
+# 負號的理由:  
+首先我們先回顧一下，若函數h(x)在x=x0無窮可微，則h在x0的泰勒展開可以被寫成:  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}h(x)=\sum_{k=0}^{\infty&space;}\frac{h^{(k)}(x_0)}{k!}(x-x_0)^k" />  
+如果我們假設2次項後的數值都非常小，小到可以忽略，那麼h(x)就可以被簡寫成:  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}\displaystyle&space;\lim_{x\to&space;x_0}h(x)&space;=&space;h(x_0)&space;&plus;&space;h^{(1)}(x_0)(x-x_0)&space;" />  
+  
+接著我們把情境拓展到2維參數:  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}h(x,y)&space;\approx&space;&space;h(x_0,y_0)&space;&plus;&space;\frac{\partial&space;h}{\partial&space;x}|_{x=x_0}(x-x_0)&space;&plus;&space;\frac{\partial&space;h}{\partial&space;y}|_{y=y_0}(y-y_0)"/>  
+  
+回到目前的loss function L，假設有兩個參數theta1&theta2，那麼L在(a,b)的泰勒展開可以寫成:  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}L(\theta&space;)&space;\approx&space;&space;L(a,b)&space;&plus;&space;\frac{\partial&space;L(a,b)}{\partial&space;\theta_1}(\theta_1-a)&space;&plus;&space;\frac{\partial&space;L(a,b)}{\partial&space;\theta_2}(\theta_2-b)&space;=&space;s&plus;u(\theta_1-a)&space;&plus;&space;v(\theta_2-b)" />  
+原先的問題也就變成:在(a,b)的open disk內找到一個點(theta1 , theta2)使得L達到最小!!  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}(\theta_1-a)^2&space;&plus;&space;(\theta_2-b)^2&space;\leq&space;&space;d^2" />  
+
+上上式第一項s為常數，所以我們專注在後2項上。  
+不難看出這個其實就是(u,v)向量和(theta1 , theta2)至(a,b)向量得內積!  
+而根據線性代數，要讓內積的值最小，唯一解就是與反方向的向量做內積。  
+
+因此(theta1 , theta2)至(a,b)向量的選擇就會是(u,v)向量的倍數，這個倍數我們給它加上負號，和(u,v)做反向內積。  
+我們把這個倍數較做eta，根據上面的敘述可以推出(theta1 , theta2)這個點的形式:  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}\begin{bmatrix}\theta_1\\\theta_2\end{bmatrix}&space;=&space;\begin{bmatrix}a&space;\\b\end{bmatrix}&space;-\eta&space;\begin{bmatrix}u&space;\\v\end{bmatrix}"/>  
+
+而這個形式正是一開始定義gradient descent所呈現的形式，這也是使用負號的原因!!  
+
+還沒完，最後我們要在回顧一件事情，那就是原先假設泰勒展開只做到1次項，2次項後面都當作近似0。  
+這個假設要成立的條件，必須是open disk要足夠小 => (theta1 , theta2)不能離(a,b)太遠 => 也就是說eta不能太大。  
