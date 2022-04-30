@@ -19,3 +19,8 @@
 
 <img src="https://latex.codecogs.com/png.image?\dpi{110}lnx=log_{e}x&space;\Rightarrow&space;a^x=e^{xlna}&space;\\\frac{da^x}{dx}=\frac{d}{d(xlna)}e^{xlna}*\frac{d}{dx}xlna&space;=&space;lna*e^{xlna}&space;=&space;a^xlna"/>  
 
+同樣利用導數的定義:  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}\frac{d}{dx}a^x=\displaystyle&space;\lim_{h&space;\to&space;0}\frac{a^{x&plus;h}-a^x}{h}=\displaystyle&space;\lim_{h&space;\to&space;0}\frac{a^x(a^h-1)}{h}=a^x*\displaystyle&space;\lim_{h&space;\to&space;0}\frac{(a^h-1)}{h}&space;=&space;a^x*lna"  />  
+
+<img src="https://latex.codecogs.com/png.image?\dpi{110}\displaystyle&space;\lim_{h&space;\to&space;0}a^h-1=\displaystyle&space;\lim_{h&space;\to&space;0}hlna&space;\\\Rightarrow&space;&space;\displaystyle&space;\lim_{h&space;\to&space;0}a^h=\displaystyle&space;\lim_{h&space;\to&space;0}1&plus;hlna&space;\\\Rightarrow&space;&space;\displaystyle&space;\lim_{h&space;\to&space;0}a=\displaystyle&space;\lim_{h&space;\to&space;0}(1&plus;hlna)^{\frac{1}{h}}&space;\\\because&space;a=e^{lna}&space;\&space;\therefore&space;e^{lna}=\lim_{h&space;\to&space;\infty&space;}(1&plus;\frac{lna}{h})^h=[\lim_{h&space;\to&space;\infty&space;}(1&plus;\frac{1}{h})^h]^{lna}&space;=&space;\lim_{h&space;\to&space;\infty&space;}(1&plus;\frac{1}{h})^{hlna}&space;\\i.e.&space;\&space;e^x&space;=&space;\lim_{h&space;\to&space;\infty&space;}&space;(1&plus;\frac{x}{h})^h&space;=&space;\sum_{n=0}^{\infty&space;}\frac{n!}{x^n}"/>  
+接著再用二項式展開，就能推出結果!  
