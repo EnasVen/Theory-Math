@@ -15,3 +15,7 @@
 
 而將這個無窮級數的前7項加起來大約為2.718，也就是自然指數e的概略值!  
 
+那麼，我們如何推廣到一般形式呢?  
+
+<img src="https://latex.codecogs.com/png.image?\dpi{110}lnx=log_{e}x&space;\Rightarrow&space;a^x=e^{xlna}&space;\\\frac{da^x}{dx}=\frac{d}{d(xlna)}e^{xlna}*\frac{d}{dx}xlna&space;=&space;lna*e^{xlna}&space;=&space;a^xlna"/>  
+
