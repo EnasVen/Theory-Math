@@ -36,6 +36,24 @@
 <img src="https://latex.codecogs.com/gif.image?\dpi{110}\underset{\alpha&space;}{arg&space;min}&space;L&space;=&space;\frac{1}{2}\left\|w\right\|^2&space;-&space;\sum_{i=1}^{n}\alpha_i[y_i(w'x_i&plus;b)-1]"  />
 
 分別對b,w偏微分後可得:  
-<img src="https://latex.codecogs.com/gif.image?\dpi{110}\left\{\begin{matrix}\sum_{i=1}^{n}\alpha_i&space;y_i&space;=&space;0\\\sum_{i=1}^{n}\alpha_i&space;y_i&space;x_i&space;=&space;0\end{matrix}\right."  />
+<img src="https://latex.codecogs.com/gif.image?\dpi{110}\left\{\begin{matrix}\sum_{i=1}^{n}\alpha_i&space;y_i&space;=&space;0\\\sum_{i=1}^{n}\alpha_i&space;y_i&space;x_i&space;=w\end{matrix}\right."  />
 此即SVM的KKT Condition!  
+
+而根據KKT Condition的理論，求解最佳化模型有一個條件:  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}\alpha_i&space;[y_i(w'x_i&plus;b)-1]&space;=&space;0&space;" />  
+依照Lagrange Multiplier的假設，我們的每一個alpha是大於等於0的常數，也就是說:  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}\alpha_i&space;=&space;\left\{\begin{matrix}0&space;,&space;&space;y_i(w'x_i&plus;b)&space;>&space;1&space;\\>0&space;,&space;y_i(w'x_i&plus;b)&space;=&space;1\end{matrix}\right.&space;" />
+
+因此，當樣本點落在2條分隔線上的時候，其對應的alpha才會有非0的值。  
+跟上面w推導的結果，w向量其實完全依賴邊線上的點才能形成。  
+也可以說這些點支撐了2條分隔線(Hyper-Plane)，這些點被稱為支持向量(support vector)  
+SVM便是以這些support vector建立分類線!!  
+
+# 進階情況
+實務上不可能像上面那樣所有資料都是完美分成2個明顯的區塊讓我們切割，一定有某些類別的點較靠近不屬於自己的類別群。  
+這些情況通常發生在邊界區，因此我們需要將原始情況做一些調整:  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}\left\{\begin{matrix}w'x_i&space;&plus;&space;b&space;\geq&space;&space;1-\xi_i&space;,&space;\forall&space;y_i&space;=&space;&plus;1\\w'x_i&space;&plus;&space;b&space;\leq&space;&space;-1&plus;\xi_i&space;,&space;\forall&space;y_i&space;=&space;-1&space;,&space;\xi_i&space;\geq&space;0&space;,&space;\forall&space;i\end{matrix}\right."  />  
+
+其實就是對原先width做了一點妥協: 好吧，一些模糊的點我就暫時放過，把它當作分對的情況好了!  
+但這個調整的誤差項不能太大，因此我們需要給予penalty修正!(手法類似L1/L2那樣加在loss後面)  
 
