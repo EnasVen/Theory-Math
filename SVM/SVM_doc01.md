@@ -30,4 +30,12 @@
 給定2條分隔線上的2點p(+側),q(-側)，這2條平行線的距離可以透過以下方式得到:  
 <img src="https://latex.codecogs.com/gif.image?\dpi{110}width&space;=&space;\overrightarrow{pq}&space;*&space;\frac{\overrightarrow{w}}{\left\|\overrightarrow{w}\right\|}&space;\\&space;=&space;\frac{1}{\left\|w\right\|}*&space;[w'(x_q-x_p)&space;]&space;\\=&space;\frac{1}{\left\|w\right\|}*&space;[w'x_q&space;-&space;w'x_p]&space;\\&space;=&space;\frac{1}{\left\|w\right\|}*&space;(1-b-(-1-b))&space;\\=&space;\frac{2}{\left\|w\right\|}&space;" />
 
-要讓這個寬度最大，等價於讓w的norm越小越好，也等價於讓w的2-norm除以2越小越好(除以2是方便後續運算，不影響方向)。  
+要讓這個寬度最大，等價於讓w的norm越小越好，也等價於讓w的norm平方除以2越小越好(除以2是方便後續運算，不影響方向)。  
+
+我們可以透過Lagrange Multiplier，對各參數偏微分求解最佳化模型:  
+<img src="https://latex.codecogs.com/gif.image?\dpi{110}\underset{\alpha&space;}{arg&space;min}&space;L&space;=&space;\frac{1}{2}\left\|w\right\|^2&space;-&space;\sum_{i=1}^{n}\alpha_i[y_i(w'x_i&plus;b)-1]"  />
+
+分別對b,w偏微分後可得:  
+<img src="https://latex.codecogs.com/gif.image?\dpi{110}\left\{\begin{matrix}\sum_{i=1}^{n}\alpha_i&space;y_i&space;=&space;0\\\sum_{i=1}^{n}\alpha_i&space;y_i&space;x_i&space;=&space;0\end{matrix}\right."  />
+此即SVM的KKT Condition!  
+
