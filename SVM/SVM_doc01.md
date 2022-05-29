@@ -52,8 +52,16 @@ SVM便是以這些support vector建立分類線!!
 # 進階情況
 實務上不可能像上面那樣所有資料都是完美分成2個明顯的區塊讓我們切割，一定有某些類別的點較靠近不屬於自己的類別群。  
 這些情況通常發生在邊界區，因此我們需要將原始情況做一些調整:  
-<img src="https://latex.codecogs.com/png.image?\dpi{110}\left\{\begin{matrix}w'x_i&space;&plus;&space;b&space;\geq&space;&space;1-\xi_i&space;,&space;\forall&space;y_i&space;=&space;&plus;1\\w'x_i&space;&plus;&space;b&space;\leq&space;&space;-1&plus;\xi_i&space;,&space;\forall&space;y_i&space;=&space;-1&space;,&space;\xi_i&space;\geq&space;0&space;,&space;\forall&space;i\end{matrix}\right."  />  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}\left\{\begin{matrix}w'x_i&space;&plus;&space;b&space;\geq&space;&space;1-\xi_i&space;,&space;\forall&space;y_i&space;=&space;&plus;1\\w'x_i&space;&plus;&space;b&space;\leq&space;&space;-1&plus;\xi_i&space;,&space;\forall&space;y_i&space;=&space;-1&space;,&space;\xi_i&space;\geq&space;0&space;,&space;\forall&space;i\end{matrix}\right."/>  
 
 其實就是對原先width做了一點妥協: 好吧，一些模糊的點我就暫時放過，把它當作分對的情況好了!  
 但這個調整的誤差項不能太大，因此我們需要給予penalty修正!(手法類似L1/L2那樣加在loss後面)  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}min&space;\&space;\frac{1}{2}\left\|w&space;\right\|^2&space;&plus;&space;C(\sum_{i}\xi_i)\\subjec&space;\&space;to&space;\left\{\begin{matrix}y_i(w'x_i&plus;b)-1&plus;\xi_i&space;\geq&space;&space;0&space;,&space;\forall&space;i&space;\\\xi_i&space;\geq&space;&space;0&space;,&space;\forall&space;i&space;\end{matrix}\right."  />
 
+後續要做的就是對各別參數偏微分，得到新的KKT Condition。
+
+SVM是由二元分類出發，如果要做多元分類，假設有k個類別，那麼有下面兩種方法:  
+1. one-against-one : 須建立 k 個 model
+2. one-against-all : 須建立 k(k-1)/2 個 model
+
+SVM 調參的方法為Grid Search + CV，給定不同組合的參數下去try，像網格一樣，故名思義Grid。  
