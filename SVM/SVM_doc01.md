@@ -19,7 +19,15 @@
 我們分別將中心分隔線慢慢往左下/右上推進，，每次推進一定距離，直到碰觸第一個資料點為止。  
 
 假設推進距離為h，那麼我們可以得到2條分隔線如下:  
-<img src="https://latex.codecogs.com/gif.image?\dpi{110}\left\{\begin{matrix}w'x&space;&plus;&space;b&space;\geq&space;&space;h&space;\\w'x&space;&plus;&space;b&space;\leq&space;&space;h&space;\end{matrix}\right.\Rightarrow&space;\left\{\begin{matrix}w'x&space;&plus;&space;b&space;\geq&space;&space;1&space;\\w'x&space;&plus;&space;b&space;\leq&space;&space;1&space;\end{matrix}\right.&space;(b&space;=&space;\frac{b}{h})" />
+<img src="https://latex.codecogs.com/gif.image?\dpi{110}\left\{\begin{matrix}w'x&space;&plus;&space;b&space;\geq&space;&space;h&space;\\w'x&space;&plus;&space;b&space;\leq&space;&space;-h&space;\end{matrix}\right.\Rightarrow&space;\left\{\begin{matrix}w'x&space;&plus;&space;b&space;\geq&space;&space;1&space;\\w'x&space;&plus;&space;b&space;\leq&space;&space;-1&space;\end{matrix}\right.&space;(b&space;=&space;\frac{b}{h})"  />
 
-其實就是透過移項讓最右邊的常數為正負1，滿足y值域的初始假設。  
+其實就是透過同除h讓最右邊的常數為正負1，滿足y值域的初始假設。  
 
+根據上面的式子，我們知道樣本點分類正確的情況會是:  
+<img src="https://latex.codecogs.com/gif.image?\dpi{110}y_i(\bold&space;w'&space;x_i)&space;\geq&space;&space;1" />  
+
+而SVM的目標就是在上式條件下，盡可能讓2條分隔線越寬越好。  
+給定2條分隔線上的2點p(+側),q(-側)，這2條平行線的距離可以透過以下方式得到:  
+<img src="https://latex.codecogs.com/gif.image?\dpi{110}width&space;=&space;\overrightarrow{pq}&space;*&space;\frac{\overrightarrow{w}}{\left\|\overrightarrow{w}\right\|}&space;\\&space;=&space;\frac{1}{\left\|w\right\|}*&space;[w'(x_q-x_p)&space;]&space;\\=&space;\frac{1}{\left\|w\right\|}*&space;[w'x_q&space;-&space;w'x_p]&space;\\&space;=&space;\frac{1}{\left\|w\right\|}*&space;(1-b-(-1-b))&space;\\=&space;\frac{2}{\left\|w\right\|}&space;" />
+
+要讓這個寬度最大，等價於讓w的norm越小越好，也等價於讓w的2-norm除以2越小越好(除以2是方便後續運算，不影響方向)。  
