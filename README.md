@@ -22,7 +22,8 @@ Display learning path under serveral algorithms and math/stat knowledge !
 `15. 反向傳播演算法(Back Propagation)`  
 `16. K平均分群法(k-Means)`  
 `17. K鄰近分類法(KNN)`  
-`18. K-Mediods(DBSCAN)` 
+`18. K-Mediods(DBSCAN)`  
 `19. 梯度下降(Gradient Decent)`  
 `20. EWMA管制圖(EWMA Control Chart)`  
+
 
