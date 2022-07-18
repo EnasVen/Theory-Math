@@ -11,19 +11,18 @@ Display learning path under serveral algorithms and math/stat knowledge !
 `4. 脊迴歸/套索迴歸/彈性網絡(Ridge Regression/Lasso Regression/ElasticNet)`  
 `5. 信息理論(Information Theory)`  
 `6. 階層分群(Hierarchical Clustering)`  
-`7. 最大墒演算法(Max Entropy)`  
+`7. 集成學習(Ensemble)` 
 `8. 決策樹(Decision Tree)`  
-`9. 淺談集成學習(Ensemble)`  
+`9.  自適應演算法(AdaBoost)`  
 `10. 梯度提升演算法(GBDT)`  
 `11. 隨機森林(Random Forest)`  
-`12. 自適應演算法(AdaBoost)`  
+`12. 樸素貝氏分類器(Naive Bayes Classifier)`  
 `13. 極限梯度提升演算法(XGBoost)`  
 `14. 支持向量機(SVM)`   
 `15. 反向傳播演算法(Back Propagation)`  
-`16. 樸素貝氏分類器(Naive Bayes Classifier)`  
+`16. K平均分群法(k-Means)`  
 `17. K鄰近分類法(KNN)`  
-`18. K平均分群法(k-Means)`  
-`19. 分類與分群概述(Classify vs Cluster)`  
-`20. 梯度下降(Gradient Decent)`  
-`21. EWMA管制圖(EWMA Control Chart)`  
+`18. K-Mediods(DBSCAN)` 
+`19. 梯度下降(Gradient Decent)`  
+`20. EWMA管制圖(EWMA Control Chart)`  
 
