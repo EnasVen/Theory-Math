@@ -1,6 +1,6 @@
 # What is BackPropagation ?
 所有深度學習網絡的權重更新都基於反向傳播法，而說穿了就是微積分的連鎖率(Chain Rule)!  
-
+大神文獻參考: https://zhuanlan.zhihu.com/p/40761721  
 
 # Proof
 定義符號:
@@ -51,3 +51,22 @@ N的上標(l)為第l層的神經元個數。
 因此將第l層的誤差以矩陣表示如下:  
 <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\delta^{(l)}&space;=&space;&space;\begin{bmatrix}\delta_1^{(l)}&space;\\...&space;\\\delta_{N^{(l)}}^{(l)}\end{bmatrix}&space;=&space;\begin{bmatrix}\sum_{k=1}^{N^{(l&plus;1)}}\delta_{k}^{(l&plus;1)}w_{1k}^{(l&plus;1)}\sigma'(z_{1}^{(l)})&space;\\...&space;\\\sum_{k=1}^{N^{(l&plus;1)}}\delta_{k}^{(l&plus;1)}w_{N^{(l)}k}^{(l&plus;1)}\sigma'(z_{N^{(l)}}^{(l)})\end{bmatrix}&space;=&space;\begin{bmatrix}\sum_{k=1}^{N^{(l&plus;1)}}\delta_{k}^{(l&plus;1)}w_{1k}^{(l&plus;1)}&space;\\...&space;\\\sum_{k=1}^{N^{(l&plus;1)}}\delta_{k}^{(l&plus;1)}w_{N^{(l)}k}^{(l&plus;1)}\end{bmatrix}&space;\bigodot&space;&space;\begin{bmatrix}\sigma'(z_{1}^{(l)})&space;\\...&space;\\\sigma'(z_{N^{(l)}}^{(l)})\end{bmatrix}" title="\delta^{(l)} = \begin{bmatrix}\delta_1^{(l)} \\... \\\delta_{N^{(l)}}^{(l)}\end{bmatrix} = \begin{bmatrix}\sum_{k=1}^{N^{(l+1)}}\delta_{k}^{(l+1)}w_{1k}^{(l+1)}\sigma'(z_{1}^{(l)}) \\... \\\sum_{k=1}^{N^{(l+1)}}\delta_{k}^{(l+1)}w_{N^{(l)}k}^{(l+1)}\sigma'(z_{N^{(l)}}^{(l)})\end{bmatrix} = \begin{bmatrix}\sum_{k=1}^{N^{(l+1)}}\delta_{k}^{(l+1)}w_{1k}^{(l+1)} \\... \\\sum_{k=1}^{N^{(l+1)}}\delta_{k}^{(l+1)}w_{N^{(l)}k}^{(l+1)}\end{bmatrix} \bigodot \begin{bmatrix}\sigma'(z_{1}^{(l)}) \\... \\\sigma'(z_{N^{(l)}}^{(l)})\end{bmatrix}" />
 
+接著計算一下Loss Function對權重的偏微分，根據連鎖律，我們得到:  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\frac{\partial&space;C(\theta&space;)}{\partial&space;w_{kj}^{(l)}}&space;=&space;\frac{\partial&space;C(\theta&space;)}{\partial&space;z_{j}^{(l)}}\frac{\partial&space;z_{j}^{(l)}}{\partial&space;w_{kj}^{(l)}}&space;=&space;\delta_j^{(l)}a_k^{(l-1)}" title="\frac{\partial C(\theta )}{\partial w_{kj}^{(l)}} = \frac{\partial C(\theta )}{\partial z_{j}^{(l)}}\frac{\partial z_{j}^{(l)}}{\partial w_{kj}^{(l)}} = \delta_j^{(l)}a_k^{(l-1)}" />
+
+很明顯，要更新l層的權重，勢必要計算後面一層的誤差，而這樣拆解下去的結果，就是抵達輸出層。  
+因此我們一開始才會先從輸出層開始討論!  
+
+所以整個BP流程就會是:
+**1.訓練樣本輸入**  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;(x_1&space;,&space;y_1)&space;...&space;(x_m&space;,&space;y_m)" title="(x_1 , y_1) ... (x_m , y_m)" />
+
+**2.Feed Forward**  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\\z^{(l)}&space;=&space;w^{(l)}a^{(l-1)}&space;&plus;&space;b^{(l)}&space;\\&space;a^{(l)}&space;=&space;\sigma(z^{(l)})&space;" title="\\z^{(l)} = w^{(l)}a^{(l-1)} + b^{(l)} \\ a^{(l)} = \sigma(z^{(l)}) " />  
+
+**3.計算輸出層誤差**  
+
+**4.計算反向傳播誤差**  
+
+**5.更新每一層的權重**  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;w_kj^{(l)}&space;\Rightarrow&space;w_kj^{(l)}&space;-&space;\eta&space;&space;\frac{\partial&space;C(\theta&space;)}{\partial&space;w_{kj}^{(l)}}&space;=&space;w_kj^{(l)}&space;-&space;\eta&space;\&space;&space;&space;\delta_j^{(l)}a_k^{(l-1)}" title="w_kj^{(l)} \Rightarrow w_kj^{(l)} - \eta \frac{\partial C(\theta )}{\partial w_{kj}^{(l)}} = w_kj^{(l)} - \eta \ \delta_j^{(l)}a_k^{(l-1)}" />
