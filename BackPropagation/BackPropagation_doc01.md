@@ -38,3 +38,9 @@ N的上標(l)為第l層的神經元個數。
 
 寫成矩陣型態如下:  
 <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\delta^{(O)}&space;=&space;\begin{bmatrix}\delta_{1}^{(O)}&space;\\...&space;\\\delta_{N^{(O)}}^{(O)}\end{bmatrix}&space;=&space;\begin{bmatrix}\frac{\partial&space;C(\theta&space;)}{\partial&space;a_1^{(O)}}&space;\\...&space;\\\frac{\partial&space;C(\theta&space;)}{\partial&space;a_{N^{(O)}}^{(O)}}\end{bmatrix}&space;\bigodot&space;\begin{bmatrix}\sigma'(z_{1}^{(O)})\\...\\\sigma'(z_{N^{(O)}}^{(O)})\end{bmatrix}" title="\delta^{(O)} = \begin{bmatrix}\delta_{1}^{(O)} \\... \\\delta_{N^{(O)}}^{(O)}\end{bmatrix} = \begin{bmatrix}\frac{\partial C(\theta )}{\partial a_1^{(O)}} \\... \\\frac{\partial C(\theta )}{\partial a_{N^{(O)}}^{(O)}}\end{bmatrix} \bigodot \begin{bmatrix}\sigma'(z_{1}^{(O)})\\...\\\sigma'(z_{N^{(O)}}^{(O)})\end{bmatrix}" />
+
+上面的運算符號為對應元素相乘，非一般數學的矩陣相乘!  
+
+根據誤差反向傳播原理，當層誤差其實就是往後一層的誤差之線性組合!  
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/BackPropagation/ErrorBP.png)  
+
