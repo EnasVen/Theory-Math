@@ -30,4 +30,8 @@ N的上標(l)為第l層的神經元個數。
 考慮Output Layer輸出層上的每一個神經元，其loss為:  
 <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;C_{i}(\theta&space;)&space;=&space;\frac{1}{m}\sum_{r=1}^{m}\left\|&space;f(x^{(r)};\theta&space;)&space;-&space;y^{(r)}&space;\right\|&space;&space;\&space;&space;where&space;\&space;&space;m&space;\&space;is&space;\&space;data&space;\&space;cnts&space;" title="C_{i}(\theta ) = \frac{1}{m}\sum_{r=1}^{m}\left\| f(x^{(r)};\theta ) - y^{(r)} \right\| \ where \ m \ is \ data \ cnts " />
 
-輸出層的整體loss其實就是把每一個神經元的loss加總起來:  
+輸出層的整體loss其實就是把每一個神經元的loss加總起來並平均:  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;C(\theta)&space;=&space;&space;\frac{1}{N^{(O)}}\sum_{i=1}^{N^{(O)}}C_{i}(\theta&space;)" title="C(\theta) = \frac{1}{N^{(O)}}\sum_{i=1}^{N^{(O)}}C_{i}(\theta )" />
+
+輸出層的Error可以表示如下:  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\delta_{j}^{(O)}&space;=&space;\frac{\partial&space;C(\theta&space;)}{\partial&space;z_{j}^{(O)}}&space;=&space;\frac{\partial&space;C(\theta&space;)}{\partial&space;a_j^{(O)}}\frac{\partial&space;a_j^{(O)}}{\partial&space;z_{j}^{(O)}}&space;=&space;\frac{\partial&space;C(\theta&space;)}{\partial&space;a_j^{(O)}}\frac{\partial&space;\sigma(z_{j}^{(O)})}{\partial&space;z_{j}^{(O)}}&space;=&space;\frac{\partial&space;C(\theta&space;)}{\partial&space;a_j^{(O)}}\sigma&space;'(z_{j}^{(O)})" title="\delta_{j}^{(O)} = \frac{\partial C(\theta )}{\partial z_{j}^{(O)}} = \frac{\partial C(\theta )}{\partial a_j^{(O)}}\frac{\partial a_j^{(O)}}{\partial z_{j}^{(O)}} = \frac{\partial C(\theta )}{\partial a_j^{(O)}}\frac{\partial \sigma(z_{j}^{(O)})}{\partial z_{j}^{(O)}} = \frac{\partial C(\theta )}{\partial a_j^{(O)}}\sigma '(z_{j}^{(O)})" />
