@@ -1,5 +1,5 @@
 # What is BackPropagation ?
-所有深度學習網絡的權重更新都基於反向傳播法，而說穿了就是微積分的連鎖率(Chain Rule)!  
+所有深度學習網絡的權重更新都基於反向傳播法，而說穿了就是微積分的連鎖律(Chain Rule)!  
 大神文獻參考: https://zhuanlan.zhihu.com/p/40761721  
 
 # Proof
