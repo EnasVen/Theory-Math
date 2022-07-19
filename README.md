@@ -33,7 +33,7 @@ Display learning path under serveral algorithms and math/stat knowledge !
 `13. 極限梯度提升演算法(XGBoost)`  
 - [x]
 `14. 支持向量機(SVM)`   
-- [ ]
+- [x]
 `15. 反向傳播演算法(Back Propagation)`  
 - [ ]
 `16. K平均分群法(k-Means)`  
