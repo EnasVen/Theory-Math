@@ -1,7 +1,8 @@
 # What is BackPropagation ?
 所有深度學習網絡的權重更新都基於反向傳播法，而說穿了就是微積分的連鎖率(Chain Rule)!  
-推導過程如下:
 
+
+# Proof
 定義符號:
 1. Input Layer : x_1 , x_2 , ... , x_n  
 2. Hidden Layer l : n_11 , n_12 , ... , n_lN(l)  
@@ -23,3 +24,10 @@ N的上標(l)為第l層的神經元個數。
 更簡潔地寫，可以呈現如下:  
 <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;z^{(l)}&space;=&space;w^{(l)}a^{(l-1)}&plus;b^{(l)}&space;\\Noted&space;\&space;&space;that&space;\&space;&space;&space;a^{(l)}&space;=&space;\sigma(z^{(l)})&space;=&space;\sigma(w^{(l)}a^{(l-1)}&plus;b^{(l)})&space;" title="z^{(l)} = w^{(l)}a^{(l-1)}+b^{(l)} \\Noted \ that \ a^{(l)} = \sigma(z^{(l)}) = \sigma(w^{(l)}a^{(l-1)}+b^{(l)}) " />
 
+整個類神經網路可以用函數的形式來表示:  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;f(x;\theta&space;)&space;=&space;\sigma(w^{(l)}&space;...&space;\sigma(w^{(2)}\sigma(w^{(1)}x&plus;b^{(1)})&plus;b^{(2)})&plus;...&space;)&plus;b^{(l)})" title="f(x;\theta ) = \sigma(w^{(l)} ... \sigma(w^{(2)}\sigma(w^{(1)}x+b^{(1)})+b^{(2)})+... )+b^{(l)})" />
+
+考慮Output Layer輸出層上的每一個神經元，其loss為:  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;C_{i}(\theta&space;)&space;=&space;\frac{1}{m}\sum_{r=1}^{m}\left\|&space;f(x^{(r)};\theta&space;)&space;-&space;y^{(r)}&space;\right\|&space;&space;\&space;&space;where&space;\&space;&space;m&space;\&space;is&space;\&space;data&space;\&space;cnts&space;" title="C_{i}(\theta ) = \frac{1}{m}\sum_{r=1}^{m}\left\| f(x^{(r)};\theta ) - y^{(r)} \right\| \ where \ m \ is \ data \ cnts " />
+
+輸出層的整體loss其實就是把每一個神經元的loss加總起來:  
