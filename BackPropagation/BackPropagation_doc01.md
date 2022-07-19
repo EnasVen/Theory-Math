@@ -57,7 +57,7 @@ N的上標(l)為第l層的神經元個數。
 很明顯，要更新l層的權重，勢必要計算後面一層的誤差，而這樣拆解下去的結果，就是抵達輸出層。  
 因此我們一開始才會先從輸出層開始討論!  
 
-所以整個BP流程就會是:
+所以整個BP流程就會是:  
 **1.訓練樣本輸入**  
 <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;(x_1&space;,&space;y_1)&space;...&space;(x_m&space;,&space;y_m)" title="(x_1 , y_1) ... (x_m , y_m)" />
 
@@ -65,8 +65,11 @@ N的上標(l)為第l層的神經元個數。
 <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\\z^{(l)}&space;=&space;w^{(l)}a^{(l-1)}&space;&plus;&space;b^{(l)}&space;\\&space;a^{(l)}&space;=&space;\sigma(z^{(l)})&space;" title="\\z^{(l)} = w^{(l)}a^{(l-1)} + b^{(l)} \\ a^{(l)} = \sigma(z^{(l)}) " />  
 
 **3.計算輸出層誤差**  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\delta^{(O)}&space;=&space;\bigtriangledown_{a^{(O)}}C(\theta&space;)&space;\bigodot&space;\sigma'(z^{(O)})" title="\delta^{(O)} = \bigtriangledown_{a^{(O)}}C(\theta ) \bigodot \sigma'(z^{(O)})" />  
 
 **4.計算反向傳播誤差**  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\delta^{(l)}&space;=&space;(w^{(l&plus;1)})^{T}&space;\delta^{(l&plus;1)}&space;\bigodot&space;\sigma'(z^{(l)})" title="\delta^{(l)} = (w^{(l+1)})^{T} \delta^{(l+1)} \bigodot \sigma'(z^{(l)})" />  
+須注意這邊的l是從O-1層開始，一直到第2層!!  
 
 **5.更新每一層的權重**  
 <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;w_kj^{(l)}&space;\Rightarrow&space;w_kj^{(l)}&space;-&space;\eta&space;&space;\frac{\partial&space;C(\theta&space;)}{\partial&space;w_{kj}^{(l)}}&space;=&space;w_kj^{(l)}&space;-&space;\eta&space;\&space;&space;&space;\delta_j^{(l)}a_k^{(l-1)}" title="w_kj^{(l)} \Rightarrow w_kj^{(l)} - \eta \frac{\partial C(\theta )}{\partial w_{kj}^{(l)}} = w_kj^{(l)} - \eta \ \delta_j^{(l)}a_k^{(l-1)}" />
