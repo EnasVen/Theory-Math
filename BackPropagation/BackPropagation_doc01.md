@@ -44,3 +44,8 @@ N的上標(l)為第l層的神經元個數。
 根據誤差反向傳播原理，當層誤差其實就是往後一層的誤差之線性組合!  
 ![Image](https://github.com/EnasVen/Theory-Math/blob/main/BackPropagation/ErrorBP.png)  
 
+若l層後面並非輸出層，則l層的誤差可以表示為:  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\\\delta_{j}^{(l)}&space;=&space;&space;\frac{\partial&space;C(\theta&space;)}{\partial&space;z_{j}^{(l)}&space;}&space;\\&space;=&space;\sum_{k=1}^{N^{(l&plus;1)}}\frac{\partial&space;C(\theta&space;)}{\partial&space;z_{k}^{(l&plus;1)}&space;}\frac{\partial&space;z_{k}^{(l&plus;1)}}{\partial&space;a_{j}^{(l)}&space;}\frac{\partial&space;a_{j}^{(l)}}{\partial&space;z_{j}^{(l)}&space;}&space;\\=&space;\sum_{k=1}^{N^{(l&plus;1)}}&space;\delta_{k}^{(l&plus;1)}&space;\frac{\partial&space;\sum_{t=1}^{N^{(l)}}w_{tk}^{(l&plus;1)}a_{t}^{(l)}&plus;b_k^{(l&plus;1)}&space;}{\partial&space;a_{j}^{(l)}&space;}\frac{\partial&space;a_{j}^{(l)}}{\partial&space;z_{j}^{(l)}&space;}&space;\\&space;=&space;\sum_{k=1}^{N^{(l&plus;1)}}\delta_{k}^{(l&plus;1)}w_jk^{(l&plus;1)}\sigma'(z_{j}^{(l)})" title="\\\delta_{j}^{(l)} = \frac{\partial C(\theta )}{\partial z_{j}^{(l)} } \\ = \sum_{k=1}^{N^{(l+1)}}\frac{\partial C(\theta )}{\partial z_{k}^{(l+1)} }\frac{\partial z_{k}^{(l+1)}}{\partial a_{j}^{(l)} }\frac{\partial a_{j}^{(l)}}{\partial z_{j}^{(l)} } \\= \sum_{k=1}^{N^{(l+1)}} \delta_{k}^{(l+1)} \frac{\partial \sum_{t=1}^{N^{(l)}}w_{tk}^{(l+1)}a_{t}^{(l)}+b_k^{(l+1)} }{\partial a_{j}^{(l)} }\frac{\partial a_{j}^{(l)}}{\partial z_{j}^{(l)} } \\ = \sum_{k=1}^{N^{(l+1)}}\delta_{k}^{(l+1)}w_jk^{(l+1)}\sigma'(z_{j}^{(l)})" />
+
+這個結果很明顯看出誤差反向傳播的事實!  
+因此將第l層的誤差以矩陣表示如下:  
