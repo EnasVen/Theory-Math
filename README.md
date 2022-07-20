@@ -21,7 +21,7 @@ Display learning path under serveral algorithms and math/stat knowledge !
 `7. 集成學習(Ensemble)` 
 - [x]
 `8. 決策樹(Decision Tree)`  
-- [ ]
+- [x]
 `9.  自適應演算法(AdaBoost)`  
 - [ ]
 `10. 梯度提升演算法(GBDT)`  
