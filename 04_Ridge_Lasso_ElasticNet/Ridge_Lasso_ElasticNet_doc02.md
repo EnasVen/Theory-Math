@@ -4,7 +4,7 @@
 1.加入L2-Regualrization使迴歸係數收縮 => 迴歸係數數值變小，但不會快速收斂至0(無變數選擇功能)  
 2.計算公式較L1-Regularization簡易，可得解析解    
 3.以增大參數估計量的bias為代價，換取較小的variance(如下圖，後面會有數學解釋來證明這個說法!)  
-![Image](https://github.com/EnasVen/Theory-Math/blob/main/Ridge_Lasso_ElasticNet/Regularization03.png)    
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/04_Ridge_Lasso_ElasticNet/Regularization03.png)    
   
 Ridge的數學式子如下:  
 <img src="https://latex.codecogs.com/gif.image?\dpi{110}\hat{\beta&space;}_{Ridge}=\underset{\beta&space;}{arg&space;min}\sum_{i=1}^{N}(y_i-\beta_0-\sum_{j=1}^{p}x_{ij}\beta&space;_j)^2" />  
@@ -31,4 +31,4 @@ Elastic Net其實就是綜合Ridge與Lasso的混合方法，它的數學式如�
   
 等於是把L1與L2懲罰項做一個線性組合!  
 將L1,L2與Elastic Net在圖形上做比較:  
-![Image](https://github.com/EnasVen/Theory-Math/blob/main/Ridge_Lasso_ElasticNet/Regularization06.png)   
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/04_Ridge_Lasso_ElasticNet/Regularization06.png)   
