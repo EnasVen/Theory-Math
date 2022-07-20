@@ -23,7 +23,7 @@ Display learning path under serveral algorithms and math/stat knowledge !
 `8. 決策樹(Decision Tree)`  
 - [ ]
 `9.  自適應演算法(AdaBoost)`  
-- [x]
+- [ ]
 `10. 梯度提升演算法(GBDT)`  
 - [x]
 `11. 隨機森林(Random Forest)`  
