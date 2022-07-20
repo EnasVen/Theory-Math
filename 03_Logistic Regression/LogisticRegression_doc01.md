@@ -29,3 +29,14 @@
 顯然地，RR的方向和Odds Ratio相同(RR大於/小於/等於 1的時候，OR也會大於/小於/等於 1)  
 
 接著我們來測試一下這個新指標是否能夠勝任:  
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/03_Logistic%20Regression/ORtest.png)  
+
+假設上圖是Cohort Study，那麼:  
+<img src="https://latex.codecogs.com/svg.image?\hat{RR}&space;=&space;\frac{a/a&plus;b}{c/c&plus;d}&space;\&space;;&space;\&space;\hat{OR}&space;=&space;\frac{&space;\frac{a/a&plus;b}{b/a&plus;b}&space;}{&space;\frac{c/c&plus;d}{d/c&plus;d}&space;}&space;=&space;\frac{ad}{bc}&space;\\&space;&space;" title="\hat{RR} = \frac{a/a+b}{c/c+d} \ ; \ \hat{OR} = \frac{ \frac{a/a+b}{b/a+b} }{ \frac{c/c+d}{d/c+d} } = \frac{ad}{bc} \\ " />  
+
+假設上圖是Case Control，那麼:  
+<img src="https://latex.codecogs.com/svg.image?\hat{OR}&space;=&space;\frac{&space;\frac{a/a&plus;c}{b/b&plus;d}&space;}{&space;\frac{c/a&plus;c}{d/b&plus;d}&space;}&space;=&space;\frac{ad}{bc}&space;\\&space;&space;" title="\hat{OR} = \frac{ \frac{a/a+c}{b/b+d} }{ \frac{c/a+c}{d/b+d} } = \frac{ad}{bc} \\ " />  
+因此在Case Control下的OR也能達到與Cohort Study相同的效果!  
+
+這裡的推演其實利用到條件機率，也就是:  
+<img src="https://latex.codecogs.com/svg.image?\\OR&space;=&space;\frac{Pr(Dead|VitA)/Pr(Alive|VitA)}{Pr(Dead|nonVitA)/Pr(Alive|nonVitA)}&space;\\&space;=&space;\frac{&space;(Pr(VitA|Dead)Pr(Dead)/Pr(VitA))&space;\&space;/&space;\&space;(Pr(VitA|Alive)Pr(Alive)/Pr(VitA))}{&space;(Pr(nonVitA|Dead)Pr(Dead)/Pr(nonVitA))&space;\&space;/&space;\&space;(Pr(nonVitA|Alive)Pr(Alive)/Pr(nonVitA))}&space;\\=&space;\frac{Pr(Vit|Dead)/Pr(Vit|Alive)}{Pr(nonVit|Dead)/Pr(nonVit|Alive)}" title="\\OR = \frac{Pr(Dead|VitA)/Pr(Alive|VitA)}{Pr(Dead|nonVitA)/Pr(Alive|nonVitA)} \\ = \frac{ (Pr(VitA|Dead)Pr(Dead)/Pr(VitA)) \ / \ (Pr(VitA|Alive)Pr(Alive)/Pr(VitA))}{ (Pr(nonVitA|Dead)Pr(Dead)/Pr(nonVitA)) \ / \ (Pr(nonVitA|Alive)Pr(Alive)/Pr(nonVitA))} \\= \frac{Pr(Vit|Dead)/Pr(Vit|Alive)}{Pr(nonVit|Dead)/Pr(nonVit|Alive)}" />  
