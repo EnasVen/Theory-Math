@@ -19,3 +19,12 @@ loss的定義是根據演算法核心精神: 針對分錯的樣本在下一個�
 這裡的d1為一個>1的數，我們預期將**上次分錯的樣本權重調高；而分對的樣本權重調低!**  
 
 因此上式可以改寫為:  
+<img src="https://latex.codecogs.com/svg.image?0.5&space;=&space;\frac{\sum_{wrong}u_i1*d_1}{\sum_{wrong}u_i1*d_1&space;&plus;&space;\sum_{correct}u_i1/d_1}" title="0.5 = \frac{\sum_{wrong}u_i1*d_1}{\sum_{wrong}u_i1*d_1 + \sum_{correct}u_i1/d_1}" />  
+
+將等式兩邊取倒數:  
+<img src="https://latex.codecogs.com/svg.image?2&space;=&space;\frac{\sum_{wrong}u_i1*d_1&space;&plus;&space;\sum_{correct}u_i1/d_1}{\sum_{wrong}u_i1*d_1}&space;=&space;1&plus;\left&space;(&space;\frac{\sum_{correct}u_i1/d_1}{\sum_{wrong}u_i1*d_1}&space;\right&space;)&space;\\\Rightarrow&space;&space;\sum_{wrong}u_i1*d_1&space;=&space;\sum_{correct}u_i1/d_1&space;\\Let&space;\&space;&space;z_1&space;=&space;&space;\sum_{correct}&space;&plus;&space;\sum_{wrong}&space;\Rightarrow&space;\varepsilon_1&space;=&space;\frac{\sum_{wrong}u_i1}{\sum_{wrong}u_i1&space;&plus;&space;\sum_{correct}u_i1}&space;=&space;\frac{\sum_{wrong}u_i1}{z_1}&space;\\\Rightarrow&space;\sum_{wrong}u_i1&space;=&space;\varepsilon_1&space;*&space;z_1&space;\&space;;&space;\sum_{correct}u_i1&space;=&space;(1-\varepsilon_1)&space;*&space;z_1" title="2 = \frac{\sum_{wrong}u_i1*d_1 + \sum_{correct}u_i1/d_1}{\sum_{wrong}u_i1*d_1} = 1+\left ( \frac{\sum_{correct}u_i1/d_1}{\sum_{wrong}u_i1*d_1} \right ) \\\Rightarrow \sum_{wrong}u_i1*d_1 = \sum_{correct}u_i1/d_1 \\Let \ z_1 = \sum_{correct} + \sum_{wrong} \Rightarrow \varepsilon_1 = \frac{\sum_{wrong}u_i1}{\sum_{wrong}u_i1 + \sum_{correct}u_i1} = \frac{\sum_{wrong}u_i1}{z_1} \\\Rightarrow \sum_{wrong}u_i1 = \varepsilon_1 * z_1 \ ; \sum_{correct}u_i1 = (1-\varepsilon_1) * z_1" />  
+  
+所以有了上面的結果，我們可以求解d1:  
+<img src="https://latex.codecogs.com/svg.image?\\(\varepsilon_1&space;z_1)d_1&space;=&space;(1-\varepsilon_1)z_1\frac{1}{d_1}&space;\\\Rightarrow&space;d_{1}^{2}&space;=&space;&space;\frac{1-\varepsilon_1}{\varepsilon_1}&space;\\\Rightarrow&space;d_1&space;=&space;\sqrt{\frac{1-\varepsilon_1}{\varepsilon_1}}&space;\\&space;...\Rightarrow&space;d_t&space;=&space;\sqrt{\frac{1-\varepsilon_t}{\varepsilon_t}}" title="\\(\varepsilon_1 z_1)d_1 = (1-\varepsilon_1)z_1\frac{1}{d_1} \\\Rightarrow d_{1}^{2} = \frac{1-\varepsilon_1}{\varepsilon_1} \\\Rightarrow d_1 = \sqrt{\frac{1-\varepsilon_1}{\varepsilon_1}} \\ ...\Rightarrow d_t = \sqrt{\frac{1-\varepsilon_t}{\varepsilon_t}}" />  
+
+上式就是AdaBoost的權重修正係數!! 
