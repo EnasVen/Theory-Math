@@ -6,7 +6,7 @@
 (例如:Logistic Regression、SVM、Random Forest...等等)  
 
 # 階層式分群種類  
-![Image](https://github.com/EnasVen/Theory-Math/blob/main/Hierarchical%20Clustering/Hie_Img01.png)  
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/06_Hierarchical%20Clustering/Hie_Img01.png)  
 
 # 點距限制
 給定多維空間兩點x和y，我們認為一個好的距離度量應該具備以下性質 :  
@@ -28,11 +28,11 @@ Manhattan距離:
 # Linkage  
 在階層式分群內，Linkage為測量群距的度量方法。常用的有3種:  
 **single linkage**:採用最小距離  
-![Image](https://github.com/EnasVen/Theory-Math/blob/main/Hierarchical%20Clustering/Hie_Img02.png)  
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/06_Hierarchical%20Clustering/Hie_Img02.png)  
 **complete inkage**:採用最大距離  
-![Image](https://github.com/EnasVen/Theory-Math/blob/main/Hierarchical%20Clustering/Hie_Img03.png)  
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/06_Hierarchical%20Clustering/Hie_Img03.png)  
 **average linkage**:採用平均距離  
-![Image](https://github.com/EnasVen/Theory-Math/blob/main/Hierarchical%20Clustering/Hie_Img04.png)  
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/06_Hierarchical%20Clustering/Hie_Img04.png)  
   
 # Example  
-![Image](https://github.com/EnasVen/Theory-Math/blob/main/Hierarchical%20Clustering/Hie_Img05.png)  
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/06_Hierarchical%20Clustering/Hie_Img05.png)  
