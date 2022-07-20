@@ -22,4 +22,4 @@
 類似物理慣性現象，套用到梯度下降的參數更新模式。  
 下圖綠色線條為前次參數更新方向，在參考負梯度方向後，將兩向量進行加法得到新的參數更新方向!  
 由於考慮了前次參數更新方向，此行為類似物理的慣性運動，因此被稱為Momentum。  
-![Image](https://github.com/EnasVen/Theory-Math/blob/main/Gradient%20Descent/Momentum.png)
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/19_Gradient%20Descent/Momentum.png)
