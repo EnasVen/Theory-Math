@@ -2,7 +2,7 @@
 # 線性代數觀點 - Part1  
 下圖是線性代數內二維向量投影的基本資訊，而PCA做的正是找出最大變異的投影向量!  
   
-![Image](https://github.com/EnasVen/Theory-Math/blob/main/PCA/PCA_img01.png)  
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/01_PCA/PCA_img01.png)  
 我們可以很清楚看到資料點X1與X2投影在V1與V2會得到不同的變異量，很明顯地，藍色的投影所得變異更大。  
   
 # 線性代數觀點 - Part2  
