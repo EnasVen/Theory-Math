@@ -14,7 +14,7 @@ VIF值用來偵測共線性是否存在於變數之間，其定義為:
 (例如:評估模型的AIC & BIC指標即使用了penalty的概念；AIC = -2 ln(L) + 2k)  
   
 下圖即為過擬和的結果是意圖:  
-![Image](https://github.com/EnasVen/Theory-Math/blob/main/Ridge_Lasso_ElasticNet/Regularization01.png)  
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/04_Ridge_Lasso_ElasticNet/Regularization01.png)  
   
 # L2 - Regularization  
 在cost function後面加上平方和懲罰項即為L2-Regularization的作法:  
@@ -39,5 +39,5 @@ w參數更新過程可以寫成:
 <img src="https://latex.codecogs.com/gif.image?\dpi{110}w\to&space;w-\frac{\eta&space;\lambda&space;}{n}sgn(w)-\eta&space;\frac{\partial&space;C_0}{\partial&space;w}" />  
   
 L1正則化的效果可以把參數往0點縮減，如下圖:  
-![Image](https://github.com/EnasVen/Theory-Math/blob/main/Ridge_Lasso_ElasticNet/Regularization02.png)  
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/04_Ridge_Lasso_ElasticNet/Regularization02.png)  
   
