@@ -5,6 +5,7 @@
 假設樣本i在第1個分類器的權重為u_i1，同時定義loss function，分對為0，分錯為1。  
 loss的定義是根據演算法核心精神: 針對分錯的樣本在下一個分類器提高權重加強訓練  
 
+# 推演
 接著我們來計算第一次的分類error rate:  
 <img src="https://latex.codecogs.com/svg.image?\varepsilon_1&space;=&space;\frac{\sum_{wrong}^{&space;}u_{i1}*l(f(x_i)\neq&space;y_i)}{\sum_{all}^{&space;}u_{i1}}&space;<&space;0.5" title="\varepsilon_1 = \frac{\sum_{wrong}^{ }u_{i1}*l(f(x_i)\neq y_i)}{\sum_{all}^{ }u_{i1}} < 0.5" />  
 上面的結果可理解為透過分錯樣本的加權平均來計算整體的error。  
