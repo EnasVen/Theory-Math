@@ -9,7 +9,7 @@ Display learning path under serveral algorithms and math/stat knowledge !
 `1. 主成分分析(PCA)`  
 - [ ]
 `2. 線性迴歸(Linear Regression)`  
-- [ ]
+- [x]
 `3. 羅吉斯迴歸(Logistic Regression)`  
 - [x]
 `4. 脊迴歸/套索迴歸/彈性網絡(Ridge Regression/Lasso Regression/ElasticNet)`  
