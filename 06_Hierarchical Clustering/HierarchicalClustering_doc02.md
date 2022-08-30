@@ -6,7 +6,7 @@ Ward提出使用error sum of square來提高分群準確度:
   
 # Example  
 下面實際使用ess來做階層式分群:  
-![Image](https://github.com/EnasVen/Theory-Math/blob/main/Hierarchical%20Clustering/Hie_Img06.png)  
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/06_Hierarchical%20Clustering/Hie_Img06.png)  
 
 # 最佳化  
 有了分群規則，我們肯定會想知道: **到底要分幾群才是最好的呢?**  
