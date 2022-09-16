@@ -16,7 +16,7 @@
 數學解釋 : 已知隨機變數X下，期望隨機變數Y的不確定性。  
 定義:  
   
-<img src="https://latex.codecogs.com/png.image?\dpi{110}H(X,Y)=H(X,Y)-H(X)&space;\\&space;=-\sum_{xy}p(x,y)ln(p(x,y))&plus;\sum_{x}p(x)ln(p(x))&space;\\&space;=&space;-\sum_{xy}p(x,y)ln(p(x,y))&plus;\sum_{x}(\sum_{y}p(x,y))&space;ln(p(x,y)))&space;\\&space;=&space;-\sum_{xy}p(x,y)[ln(p(x,y)-ln(p(x)))]&space;\\&space;=&space;-\sum_{xy}p(x,y)ln(p(y|x|))" />  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}H(Y|X)=H(X,Y)-H(X)&space;\\&space;=-\sum_{xy}p(x,y)ln(p(x,y))&plus;\sum_{x}p(x)ln(p(x))&space;\\&space;=&space;-\sum_{xy}p(x,y)ln(p(x,y))&plus;\sum_{x}(\sum_{y}p(x,y))&space;ln(p(x,y)))&space;\\&space;=&space;-\sum_{xy}p(x,y)[ln(p(x,y)-ln(p(x)))]&space;\\&space;=&space;-\sum_{xy}p(x,y)ln(p(y|x|))" />  
   
 第一式可以透過Joint Entropy的定義推得!  
 
