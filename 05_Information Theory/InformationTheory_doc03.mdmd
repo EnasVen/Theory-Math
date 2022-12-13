@@ -1,0 +1,4 @@
+# Information 理解
+Cross-Entropy 在機器學習/深度學習都是常用的metric。要理解就必須回到entropy最初的定義。
+
+$$\sum_{n=1}^n n = {n \over 2} (n + 1) $$
