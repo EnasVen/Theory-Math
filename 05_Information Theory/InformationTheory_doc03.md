@@ -36,3 +36,18 @@ w.l.o.g，假設X是連續型隨機變數:
 <img src="https://latex.codecogs.com/gif.image?\dpi{110}L&space;=&space;\int_{-\infty&space;}^{\infty&space;}&space;-p(x)lnp(x)dx&space;&plus;&space;\lambda&space;(\int_{-\infty&space;}^{\infty&space;}p(x)dx-1)&space;\\=&space;\int_{-\infty&space;}^{\infty&space;}[\lambda&space;p(x)&space;-&space;p(x)lnp(x)]dx&space;-&space;\lambda&space;"  />  
 
 
+令L對p的偏微分為0，求解p:
+<img src="https://latex.codecogs.com/gif.image?\dpi{110}Let&space;\&space;&space;&space;\frac{\partial&space;L}{\partial&space;p(x)}=0&space;\Rightarrow&space;\int_{-\infty&space;}^{\infty&space;}[\lambda-lnp(x)-1]dx&space;=&space;0&space;\Rightarrow&space;p(x)=e^{\lambda&space;-1}"  />  
+
+可以看到最佳解p其實和x完全沒關係，根據機率論隨機分布的性質，我們知道X~Uniform，也就是說平均分配(前面的普通加權)會讓系統資訊量最大。  
+這就是Shannon Entropy要帶給我們的概念。  
+
+
+# Cross-Entropy
+接著我們去看一下Cross-Entropy，他的定義是同一資料集上兩個分布的差異(並不是距離，忘記的話 recall一下 KLD的推導過程!)。  
+<img src="https://latex.codecogs.com/gif.image?\dpi{110}CrossEntropy(p,q)&space;=&space;H(P,Q)&space;=&space;E_p[-ln(q(X))]&space;" />  
+根據前面的論述，我們知道Entropy是bits或者nats期望值的下界(i.e. E(I(X)))，所以我們會得到:  
+<img src="https://latex.codecogs.com/gif.image?\dpi{110}H(p,q)&space;=&space;E_p[-ln(q(X))]\geq&space;E_p[-ln(p(X))]&space;=&space;H(p)&space;"  />  
+當ML/DL在做深度學習的時候，我們總是在minimize cross-entropy，這個動作就是在縮小和Entropy H(p)的差距，因為我們知道將-lnq(x)逼近-lnp(x)可以帶給我們最省資源的傳輸方式!!   
+
+# KLD Again
