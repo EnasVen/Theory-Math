@@ -32,5 +32,7 @@ Entropy裡面的 -log 其實就是做編碼的動作。將系統或事件用0和
 w.l.o.g，假設X是連續型隨機變數:  
 <img src="https://latex.codecogs.com/gif.image?\dpi{110}H(X)&space;=&space;\int&space;-p(x)lnp(x)dx"  />  
 
+在機率基本性質，積分總和為1的限制式下，我們使用Lagrange Multiplier求解:  
+<img src="https://latex.codecogs.com/gif.image?\dpi{110}L&space;=&space;\int_{-\infty&space;}^{\infty&space;}&space;-p(x)lnp(x)dx&space;&plus;&space;\lambda&space;(\int_{-\infty&space;}^{\infty&space;}p(x)dx-1)&space;\\=&space;\int_{-\infty&space;}^{\infty&space;}[\lambda&space;p(x)&space;-&space;p(x)lnp(x)]dx&space;-&space;\lambda&space;"  />  
 
 
