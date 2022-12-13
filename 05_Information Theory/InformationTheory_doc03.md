@@ -51,3 +51,8 @@ w.l.o.g，假設X是連續型隨機變數:
 當ML/DL在做深度學習的時候，我們總是在minimize cross-entropy，這個動作就是在縮小和Entropy H(p)的差距，因為我們知道將-lnq(x)逼近-lnp(x)可以帶給我們最省資源的傳輸方式!!   
 
 # KLD Again
+有了現在的新理解，我們看一下KLD的分解:  
+<img src="https://latex.codecogs.com/gif.image?\dpi{110}D_KL(P(X)||Q(X))&space;\\&space;=&space;\int_{-\infty&space;}^{\infty&space;}-p(x)ln(\frac{q(x)}{p(x)})dx&space;\\=&space;\int_{-\infty&space;}^{\infty&space;}-p(x)lnq(x)dx-\int_{-\infty&space;}^{\infty&space;}-p(x)lnp(x)&space;\\&space;=&space;E_p[-lnq(X)]-E_p[-lnp(X)]"  />  
+可以看到KLD其實就是Cross-Entropy減去target Entropy，更重要的說法是: 目前的編碼方式還可以下降多少nats的期望值!!!  
+
+以上，應該會對CrossEntropy有新一層的理解!  
