@@ -27,3 +27,15 @@ GBDT的優化仍然是使用gradient descent進行，所以我們先recall一下
 <img src="https://latex.codecogs.com/png.image?\dpi{110}\theta_{increment}^{(t)}&space;=&space;-&space;\eta&space;\frac{\partial&space;L}{\partial&space;\theta^{(t-1)}}&space;" />  
 <img src="https://latex.codecogs.com/png.image?\dpi{110}\theta_{final}&space;=&space;\theta^{(0)}&space;&plus;&space;\sum_{t=1}^{T}\theta_{increment}^{(t)}&space;" />  
 
+我們將這個概念套用到函數空間上，將theta換成F(x)，這個大寫F就是每一次迭代累積的決策樹模型之和。(因為我們說過boosting模型是加法模型!)  
+形式如下:  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}F^{(t)}(x)&space;=&space;F^{(t-1)}(x)&space;&plus;&space;f_t(x)&space;"  />  
+這個小寫的f就是剛剛的increments，大寫F就是最終輸出，我們給他x，他output預測類別y:  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}f_t(x)&space;=&space;-\eta&space;\frac{\partial&space;L}{\partial&space;F^{(t-1)}(x)}&space;\&space;,&space;F(x)&space;=&space;\sum_{t=0}^{T}f_t(x)" title="https://latex.codecogs.com/png.image?\dpi{110}f_t(x) = -\eta \frac{\partial L}{\partial F^{(t-1)}(x)} \ , F(x) = \sum_{t=0}^{T}f_t(x)" />  
+
+後續模型的演算過程，就是把這個負梯度當作真實值y，當前的決策樹模型想辦fit它。(呼應開頭的gradient核心精神)  
+
+# Pseduo Code
+我們先列出 GBDT 這個boosting tree加法模型:  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}F(x;w)&space;=&space;\sum_{t=0}^{T}f_t(x;w_t)&space;=&space;\sum_{t=0}^{T}\alpha_t&space;h^{(t)}(x;w_t)&space;" />  
+右邊的alpha其實就是對應到梯度下降的學習率(learning rate)eta，而我們的目標就是找到一組參數w使得tree h的結果會是負梯度(被我們當作真實值y)。  
