@@ -38,4 +38,28 @@ GBDT的優化仍然是使用gradient descent進行，所以我們先recall一下
 # Pseduo Code
 我們先列出 GBDT 這個boosting tree加法模型:  
 <img src="https://latex.codecogs.com/png.image?\dpi{110}F(x;w)&space;=&space;\sum_{t=0}^{T}f_t(x;w_t)&space;=&space;\sum_{t=0}^{T}\alpha_t&space;h^{(t)}(x;w_t)&space;" />  
-右邊的alpha其實就是對應到梯度下降的學習率(learning rate)eta，而我們的目標就是找到一組參數w使得tree h的結果會是負梯度(被我們當作真實值y)。  
+右邊的alpha其實就是對應到梯度下降的學習率(learning rate)eta，而我們的目標就是找到一組參數w使得tree h的結果會是負梯度。  
+
+所以整體演算法流程如下:  
+
+input訓練資料集: T = {(x1,y1)...(xN, yN)}，損失函數L(y, F(x))  
+output預測類別: F(x)  
+
+**Step 1** - 初始化f0(x)  
+**Step 2** - 迴圈  
+
+for t in range(1, T+1):  
+
+  計算負梯度  
+  <img src="https://latex.codecogs.com/png.image?\dpi{110}\hat{h}^{(t)}(x_i)=-[\frac{\partial&space;L(y_i,&space;F^{(t-1)}(x_i))}{\partial&space;F^{(t-1)}(x_i)}]&space;,&space;\&space;i=1,2,...,N"  />  
+  
+  尋找最佳的w參數來建立第t顆樹，注意這裡的目的是要讓h結果與負梯度越相近越好!  
+  <img src="https://latex.codecogs.com/png.image?\dpi{110}w^*&space;=&space;\underset{w}{argmin}\sum_{i=1}^{N}(\hat{h}^{(t)}(x_i)-h^{(t)}(x_i))^2"  />  
+  
+  利用剛剛找到的最佳w建立樹模型並且依據loss function找到最佳的learning rate!  
+  <img src="https://latex.codecogs.com/png.image?\dpi{110}\rho^*&space;=&space;\underset{\rho&space;}{argmin}&space;\sum_{i=1}^{N}&space;L(h^{(t)}(x_i),&space;F^{(t-1)}(x_i)&plus;\rho&space;h^{(t)}(x_i,&space;w^*))"  />  
+  
+  當前模型可以寫成:  
+  <img src="https://latex.codecogs.com/png.image?\dpi{110}f_t(x)&space;=&space;\rho^*&space;h^{(t)}(x,&space;w^*))&space;\Rightarrow&space;F^{(t)}(x)&space;=&space;F^{(t-1)}&plus;f_t(x)"/>  
+  
+**Step 3** - 輸出最新模型F  
