@@ -52,7 +52,7 @@ w.l.o.g，假設X是連續型隨機變數:
 
 # KLD Again
 有了現在的新理解，我們看一下KLD的分解:  
-<img src="https://latex.codecogs.com/gif.image?\dpi{110}D_KL(P(X)||Q(X))&space;\\&space;=&space;\int_{-\infty&space;}^{\infty&space;}-p(x)ln(\frac{q(x)}{p(x)})dx&space;\\=&space;\int_{-\infty&space;}^{\infty&space;}-p(x)lnq(x)dx-\int_{-\infty&space;}^{\infty&space;}-p(x)lnp(x)&space;\\&space;=&space;E_p[-lnq(X)]-E_p[-lnp(X)]"  />  
+<img src="https://latex.codecogs.com/gif.image?\dpi{110}D_{KL}(P(X)||Q(X))&space;\\&space;=&space;\int_{-\infty&space;}^{\infty&space;}-p(x)ln(\frac{q(x)}{p(x)})dx&space;\\=&space;\int_{-\infty&space;}^{\infty&space;}-p(x)lnq(x)dx-\int_{-\infty&space;}^{\infty&space;}-p(x)lnp(x)&space;\\&space;=&space;E_p[-lnq(X)]-E_p[-lnp(X)]"  />  
 可以看到KLD其實就是Cross-Entropy減去target Entropy，更重要的說法是: 目前的編碼方式還可以下降多少nats的期望值!!!  
 
 以上，應該會對CrossEntropy有新一層的理解!  
