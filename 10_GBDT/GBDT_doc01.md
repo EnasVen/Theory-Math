@@ -35,7 +35,7 @@ GBDT的優化仍然是使用gradient descent進行，所以我們先recall一下
 
 後續模型的演算過程，就是把這個負梯度當作真實值y，當前的決策樹模型想辦fit它。(呼應開頭的gradient核心精神)  
 
-# Pseduo Code
+# Pseudo Code
 我們先列出 GBDT 這個boosting tree加法模型:  
 <img src="https://latex.codecogs.com/png.image?\dpi{110}F(x;w)&space;=&space;\sum_{t=0}^{T}f_t(x;w_t)&space;=&space;\sum_{t=0}^{T}\alpha_t&space;h^{(t)}(x;w_t)&space;" />  
 右邊的alpha其實就是對應到梯度下降的學習率(learning rate)eta，而我們的目標就是找到一組參數w使得tree h的結果會是負梯度。  
