@@ -28,4 +28,4 @@ Obj^{(t)}=\sum_{i=1}^{n}[g_if_t(x_i)+h_if_t(x_i)^2]+\Omega(f_t(x_i))
 所以優化Obj等價於優化f_t!  
 
 # 正則化
-
+施工中...
