@@ -19,3 +19,4 @@ f(x)在x=a的泰勒展開如下:
 <img src="https://latex.codecogs.com/png.image?\dpi{110}\sum_{n=0}^{\infty&space;}\frac{f^{(n)}(a)(x-a)^n}{n!}" />  
 那麼現在的x=F + f (看一下Obj裡面L的引數)；a=我們在t-1時的F，所以x-a不就只剩下f了嗎?  
 
+接著替換一下notation:  
