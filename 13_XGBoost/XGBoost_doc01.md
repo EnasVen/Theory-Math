@@ -40,6 +40,21 @@ f(x)在x=a的泰勒展開如下:
 回到小節主題，我們定義一個tree模型的複雜度如下:  
 <img src="https://latex.codecogs.com/png.image?\dpi{110}\Omega(f_t(x_i))=\gamma&space;T&space;&plus;&space;\frac{1}{2}\lambda&space;\sum_{j=1}^{T}w_{j}^2&space;" />  
 
+也就是說，tree的複雜度可以被寫成葉節點數量和對應值的實數向量的L2 norm!!  
+關鍵的來了，我們假設第j個葉子的樣本index集合如下:  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}I_j&space;=&space;\{i|q(x_i)=j&space;\}"/>  
+
+I這個集合代表的意思是收集"那些"i，哪些i呢?  
+使得第i個樣本屬於第j個葉節點的"那些"i。  
+所以你會收集到一堆index，例如: 第10,07,99,...個樣本屬於某個葉節點。  
+
+那我們就可以根據這個定義置換掉原先的summation from 1 to n (n個樣本)。  
+為什麼可以置換呢?  
+原本計算是每一個樣本的f值，由於每一個樣本最終都會存在於某個葉節點內。  
+所以我們把葉節點內的元素全部起來，啊不就跟原本by樣本逐一計算的結果是一樣的嗎?  
+
+
+
 
 
 施工中...
