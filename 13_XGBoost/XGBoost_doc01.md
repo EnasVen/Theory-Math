@@ -28,4 +28,18 @@ f(x)在x=a的泰勒展開如下:
 根據上式，優化Obj等價於優化f_t!  
 
 # 正則化
+假設tree模型有T個葉節點(leaf)，每個葉節點對應的值w可表示為T維實數向量。  
+由於決策樹的特性，每一個葉節點的對應值都會相同，所以我們會得到:  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}q&space;:&space;\mathbb{R}^T&space;\rightarrow&space;{1,2,...,T}" />  
+也就是說，只要知道預測值，就知道該元素在第幾片葉節點上!  
+
+更進一步來看，f可以被表示成:  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}f_t(x)&space;\Rightarrow&space;&space;w_{q(x)}" />  
+其中q(x)代表樣本x在哪一個葉節點上，而w則代表那個葉節點的對應值是多少。  
+
+回到小節主題，我們定義一個tree模型的複雜度如下:  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}\Omega(f_t(x_i))=\gamma&space;T&space;&plus;&space;\frac{1}{2}\lambda&space;\sum_{j=1}^{T}w_{j}^2&space;" />  
+
+
+
 施工中...
