@@ -23,9 +23,9 @@ f(x)在x=a的泰勒展開如下:
 <img src="https://latex.codecogs.com/png.image?\dpi{110}g_i=L^{(1)}(y_i,&space;F_{t-1}(x_i))&space;\&space;;&space;\&space;h_i=\frac{1}{2}L^{(2)}(y_i,&space;F_{t-1}(x_i))&space;"/>  
 
 由於L(y, F_(t-1))這一項是常數(前面的歷史模型已經確定)，於是移掉常數的項目後，目標函數可以寫成:  
-Obj^{(t)}=\sum_{i=1}^{n}[g_if_t(x_i)+h_if_t(x_i)^2]+\Omega(f_t(x_i))  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}Obj^{(t)}=\sum_{i=1}^{n}[g_if_t(x_i)&plus;h_if_t(x_i)^2]&plus;\Omega(f_t(x_i))&space;" />
 
-所以優化Obj等價於優化f_t!  
+根據上式，優化Obj等價於優化f_t!  
 
 # 正則化
 施工中...
