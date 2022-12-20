@@ -53,8 +53,11 @@ I這個集合代表的意思是收集"那些"i，哪些i呢?
 原本計算是每一個樣本的f值，由於每一個樣本最終都會存在於某個葉節點內。  
 所以我們把葉節點內的元素全部起來，啊不就跟原本by樣本逐一計算的結果是一樣的嗎?  
 
+<img src="https://latex.codecogs.com/png.image?\dpi{110}Obj^{(t)}&space;\\&space;\approx&space;&space;\sum_{i=1}^{n}[g_if_t(x_i)&plus;h_if_t(x_i)^2]&space;&plus;&space;\Omega(f_t(x_i))&space;\\&space;=&space;\sum_{i=1}^{n}[g_if_t(x_i)&plus;h_if_t(x_i)^2]&space;&plus;&space;\gamma&space;T&space;&plus;&space;\frac{1}{2}\lambda&space;\sum_{j=1}^{T}w_j^2&space;\\&space;=&space;\sum_{j=1}^{T}\sum_{i\in&space;I_j}g_iw_j&space;&plus;&space;\sum_{j=1}^{T}\sum_{i\in&space;I_j}\frac{1}{2}h_iw_j^2&space;&plus;&space;\gamma&space;T&space;&plus;&space;\frac{1}{2}\lambda&space;\sum_{j=1}^{T}w_j^2&space;" />
 
+合併一下就可以寫成:  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}\sum_{j=1}^{T}[&space;(\sum_{i\in&space;I_j}g_i)&space;w_j&space;&plus;&space;\frac{1}{2}(\sum_{i\in&space;I_j}h_i&plus;\lambda)w_j^2]&space;&plus;&space;\gamma&space;T" />  
 
-
+做一點代換讓式子更簡潔:  
 
 施工中...
