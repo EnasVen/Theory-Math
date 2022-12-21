@@ -66,7 +66,3 @@ I這個集合代表的意思是收集"那些"i，哪些i呢?
 
 得到的w帶入Obj後會得到結構函數，也就是當前loss還可以降低的值，越小當然越好!  
 <img src="https://latex.codecogs.com/png.image?\dpi{110}-\frac{1}{2}\sum_{j=1}^{T}\frac{G_j^2}{H_j&plus;\lambda}&plus;\gamma&space;T"/>  
-
-
-
-施工中...
