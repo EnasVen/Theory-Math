@@ -29,7 +29,7 @@ Display learning path under serveral algorithms and math/stat knowledge !
 `11. 隨機森林(Random Forest)`  
 - [ ]
 `12. 樸素貝氏分類器(Naive Bayes Classifier)`  
-- [ ]
+- [x]
 `13. 極限梯度提升演算法(XGBoost)`  
 - [x]
 `14. 支持向量機(SVM)`   
