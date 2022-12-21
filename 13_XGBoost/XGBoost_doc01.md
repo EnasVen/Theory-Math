@@ -59,5 +59,14 @@ I這個集合代表的意思是收集"那些"i，哪些i呢?
 <img src="https://latex.codecogs.com/png.image?\dpi{110}\sum_{j=1}^{T}[&space;(\sum_{i\in&space;I_j}g_i)&space;w_j&space;&plus;&space;\frac{1}{2}(\sum_{i\in&space;I_j}h_i&plus;\lambda)w_j^2]&space;&plus;&space;\gamma&space;T" />  
 
 做一點代換讓式子更簡潔:  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}Let&space;\&space;G_j=\sum_{i&space;\in&space;I_j}g_i&space;\&space;;&space;\&space;H_j&space;=&space;\sum_{i&space;\in&space;I_j}h_i&space;\\\Rightarrow&space;&space;\sum_{j=1}^{T}[&space;G_j&space;w_j&space;&plus;&space;\frac{1}{2}(H_j&plus;\lambda)w_j^2]&space;&plus;&space;\gamma&space;T"/>  
+
+將上式對wj做偏微分並令其為零，求最佳的w:  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}G_j&space;&plus;&space;(H_i&plus;\lambda)w_j&space;=&space;0&space;\Rightarrow&space;\hat{w}_j&space;=&space;-&space;\frac{G_j}{H_j&plus;\lambda}"/>  
+
+得到的w帶入Obj後會得到結構函數，也就是當前loss還可以降低的值，越小當然越好!  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}-\frac{1}{2}\sum_{j=1}^{T}\frac{G_j^2}{H_j&plus;\lambda}&plus;\gamma&space;T"/>  
+
+
 
 施工中...
