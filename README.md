@@ -57,3 +57,5 @@ Display learning path under serveral algorithms and math/stat knowledge !
 `25. Gaussian Mixture Model`
 - [ ]
 `26. Kernel Density Estimation`  
+- [ ]
+`27. HPO相關演算法`  
