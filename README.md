@@ -45,5 +45,15 @@ Display learning path under serveral algorithms and math/stat knowledge !
 `19. 梯度下降(Gradient Decent)`  
 - [ ]
 `20. EWMA管制圖(EWMA Control Chart)`  
-
-
+- [ ]
+`21. ARIMA`
+- [ ]
+`22. AutoEncoder與VAE`
+- [ ]
+`23. Attention機制`
+- [ ]
+`24. Transformer`  
+- [ ]
+`25. Gaussian Mixture Model`
+- [ ]
+`26. Kernel Density Estimation`  
