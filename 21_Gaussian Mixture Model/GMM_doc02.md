@@ -18,4 +18,7 @@ X,Z以及theta分別為我們的數據、隱含變量以及隱含變量的參數
 原式被拆成了N個part相加，我們focus在第一項規律:  
 <img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}\sum_{Z}\left&space;(&space;logP(x_1,z_1|\theta&space;)P(Z|X,\theta^{(t)})&space;\right)&space;\\=&space;\sum_{z_1...z_N}\left&space;(&space;logP(x_1,z_1|\theta&space;)\prod_{i=1}^{N}P(z_i|x_i,&space;\theta^{(t)})&space;\right)\\=&space;\sum_{z_1...z_N}&space;logP(x_1,z_1|\theta&space;)P(z_1|x_1,&space;\theta^{(t)})\left&space;(&space;\prod_{i=2}^{N}P(z_i|x_i,&space;\theta^{(t)})&space;\right&space;)\\=&space;\sum_{z_1}\sum_{z_2...z_N}&space;logP(x_1,z_1|\theta&space;)P(z_1|x_1,&space;\theta^{(t)})\left&space;(&space;\prod_{i=2}^{N}P(z_i|x_i,&space;\theta^{(t)})&space;\right&space;)\\=&space;\sum_{z_1}&space;logP(x_1,z_1|\theta&space;)P(z_1|x_1,&space;\theta^{(t)})&space;*&space;\sum_{z_2...z_N}\left&space;(&space;\prod_{i=2}^{N}P(z_i|x_i,&space;\theta^{(t)})&space;\right&space;)" />  
 
-後面那一項其實都是1在相乘:  
+後面那一項其實都是1在相乘(根據機率總合為1的性質):  
+<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}\sum_{z_2...z_N}\left&space;(&space;\prod_{i=2}^{N}P(z_i|x_i,&space;\theta^{(t)})&space;\right&space;)\\=&space;\sum_{z_2}\sum_{z_3}...\sum_{z_N}\left&space;(&space;P(z_2|x_2,&space;\theta^{(t)})...P(z_N|x_N,&space;\theta^{(t)})&space;\right&space;)\\=&space;\sum_{z_2}P(z_2|x_2,&space;\theta^{(t)})\sum_{z_3}P(z_3|x_3,&space;\theta^{(t)})...\sum_{z_N}P(z_N|x_N,&space;\theta^{(t)})\\&space;=&space;1*1*...*1\\=&space;1&space;&space;" />  
+
+那麼我們可以將Q函數繼續化簡:  
