@@ -46,7 +46,7 @@ Display learning path under serveral algorithms and math/stat knowledge !
 - [x]
 `20. EM演算法`  
 - [ ]
-`21. ARIMA`
+`21. Gaussian Mixture Model`
 - [ ]
 `22. AutoEncoder與VAE`
 - [ ]
@@ -54,8 +54,6 @@ Display learning path under serveral algorithms and math/stat knowledge !
 - [ ]
 `24. Transformer`  
 - [ ]
-`25. Gaussian Mixture Model`
+`25. HPO相關演算法`
 - [ ]
 `26. Kernel Density Estimation`  
-- [ ]
-`27. HPO相關演算法`  
