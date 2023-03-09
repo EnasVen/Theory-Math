@@ -43,7 +43,7 @@ Display learning path under serveral algorithms and math/stat knowledge !
 `18. K-Mediods(DBSCAN)`  
 - [x]
 `19. 梯度下降(Gradient Decent)`  
-- [ ]
+- [x]
 `20. EM演算法`  
 - [ ]
 `21. ARIMA`
