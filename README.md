@@ -44,7 +44,7 @@ Display learning path under serveral algorithms and math/stat knowledge !
 - [x]
 `19. 梯度下降(Gradient Decent)`  
 - [ ]
-`20. EWMA管制圖(EWMA Control Chart)`  
+`20. EM演算法`  
 - [ ]
 `21. ARIMA`
 - [ ]
