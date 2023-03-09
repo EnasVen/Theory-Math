@@ -22,3 +22,10 @@ X,Z以及theta分別為我們的數據、隱含變量以及隱含變量的參數
 <img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}\sum_{z_2...z_N}\left&space;(&space;\prod_{i=2}^{N}P(z_i|x_i,&space;\theta^{(t)})&space;\right&space;)\\=&space;\sum_{z_2}\sum_{z_3}...\sum_{z_N}\left&space;(&space;P(z_2|x_2,&space;\theta^{(t)})...P(z_N|x_N,&space;\theta^{(t)})&space;\right&space;)\\=&space;\sum_{z_2}P(z_2|x_2,&space;\theta^{(t)})\sum_{z_3}P(z_3|x_3,&space;\theta^{(t)})...\sum_{z_N}P(z_N|x_N,&space;\theta^{(t)})\\&space;=&space;1*1*...*1\\=&space;1&space;&space;" />  
 
 那麼我們可以將Q函數繼續化簡:  
+<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}Q(\theta,&space;\theta^{(t)})\\=&space;\sum_{z_1}logP(x_1,z_1|\theta)P(z_1|x_1,&space;\theta^{(t)})&plus;...&plus;\sum_{z_N}logP(x_N,z_N|\theta)P(z_N|x_N,&space;\theta^{(t)})\\=&space;\sum_{i=1}^{N}\sum_{z_i}logP(x_i,z_i|\theta)P(z_i|x_i,&space;\theta^{(t)})\\=&space;\sum_{i=1}^{N}\sum_{j=1}^{k}logP(x_i,z_i=C_j|\theta)P(z_i=C_j|x_i,&space;\theta^{(t)})\\&space;" />  
+
+再次利用貝式定理處理條件與邊際pdf:  
+<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}\sum_{i=1}^{N}\sum_{j=1}^{k}logP(x_i,z_i=C_j|\theta)P(z_i=C_j|x_i,&space;\theta^{(t)})\\&space;=&space;\sum_{i=1}^{N}\sum_{j=1}^{k}log\left&space;(&space;P(z_i=C_j)*P(x_i|\theta)&space;\right&space;)P(z_i=C_j|x_i,&space;\theta^{(t)})\\=&space;\sum_{i=1}^{N}\sum_{j=1}^{k}log(p_j*N(x_i|\mu_j,\Sigma_j))P(z_i=C_j|x_i,&space;\theta^{(t)})\\=&space;\sum_{i=1}^{N}\sum_{j=1}^{k}\left&space;(&space;logp_j&space;&plus;&space;log(N(x_i|\mu_j,\Sigma_j))&space;\right&space;)P(z_i=C_j|x_i,&space;\theta^{(t)})&space;" />  
+
+化簡完畢，接著就是透過MLE尋找下一個theta，也就是M-Steps。  
+不過M-Steps過程非常複雜，用到Lagrange Multiplier求解偏微分，日後有機會再補上!  
