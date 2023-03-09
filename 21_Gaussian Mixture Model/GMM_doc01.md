@@ -22,5 +22,13 @@ GMM的流程就是從k個高斯模型中，根據權重選出一個模型，然�
 並且能推出X|Z的pdf:  
 <img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}p(x|z_k=1)=p(x|\mu_k,&space;\Sigma_k)&space;\Rightarrow&space;p(x|z)=\prod_{i=1}^{k}p(x|z_k=1)^{z_k}=p(x|\mu_k,&space;\Sigma_k)^{z_k}" />
 
+那麼有了條件pdf，是不是就能得到joint pdf呢?  
+<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}p(x,z,\mu&space;,\Sigma)\\&space;=\sum_{Z}&space;p(X|Z)*p(Z)\\&space;=\sum_{i=1}^{k}&space;p(x|z_i=1)*p(z_i=1)\\&space;=\sum_{i=1}^{k}\alpha_i&space;*p(x|\mu_i,&space;\Sigma_i)&space;" />
+
+注意這裡的u和sigma(cov. matrix)各有k個!
+
+把高斯分布的pdf置換後就能得到GMM模型的理論形式:  
+<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}p(x,z,\mu&space;,\Sigma)=\sum_{i=1}^{k}\alpha_i&space;*&space;N(x|\mu_i,&space;\Sigma_i)&space;\\N(x|\mu_i,&space;\Sigma_i)=\frac{1}{\sqrt{(2\pi)^d&space;|\Sigma_i|}}exp{-\frac{1}{2}(x-\mu_i)^T\Sigma_{i}^{-1}(x-\mu_i)}&space;&space;\\subject\&space;to&space;:&space;\&space;&space;\sum_{i=1}^{k}\alpha_i=1&space;\&space;,&space;\&space;&space;0\leq&space;\alpha_i<1"  />
+
 根據上章節EM演算法的結果，我們知道:  
 <img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}Q(\theta&space;,&space;\hat{\theta^{(t)}})=E_{Z|X,\theta^{(i)}}[logP(X,Z|\theta)]"  />
