@@ -1,4 +1,4 @@
-# 原理推導
+# GMM模型初探
 GMM會用到EM演算法去估計隱含變量，還沒看過EM演算法的讀者可以先去上一章節觀看。  
 
 首先我們要知道GMM的模型怎麼來的，根據資料，我們已知有k個feature。  
@@ -30,5 +30,7 @@ GMM的流程就是從k個高斯模型中，根據權重選出一個模型，然�
 把高斯分布的pdf置換後就能得到GMM模型的理論形式:  
 <img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}p(x,z,\mu&space;,\Sigma)=\sum_{i=1}^{k}\alpha_i&space;*&space;N(x|\mu_i,&space;\Sigma_i)&space;\\N(x|\mu_i,&space;\Sigma_i)=\frac{1}{\sqrt{(2\pi)^d&space;|\Sigma_i|}}exp{-\frac{1}{2}(x-\mu_i)^T\Sigma_{i}^{-1}(x-\mu_i)}&space;&space;\\subject\&space;to&space;:&space;\&space;&space;\sum_{i=1}^{k}\alpha_i=1&space;\&space;,&space;\&space;&space;0\leq&space;\alpha_i<1"  />
 
-根據上章節EM演算法的結果，我們知道:  
-<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}Q(\theta&space;,&space;\hat{\theta^{(t)}})=E_{Z|X,\theta^{(i)}}[logP(X,Z|\theta)]"  />
+重點來了，當我們已經預先假設初始參數u和sigma(cov. matrix)時，我們就能透過後驗分布(posterior)的計算得到樣本來自第i個高斯模型的機率:  
+<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}p(z_i=1|x)=\frac{p(x|z_i=1)p(z_i=1)}{p(x)}=\frac{\alpha_iN(x|\mu_i,\Sigma_i)}{\sum_{t=1}^{k}N(x|\mu_t,\Sigma_t)}" />
+
+
