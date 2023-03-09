@@ -24,4 +24,22 @@
 
 LHS: 由於跟Z無關，所以仍然維持原式。  
 RHS:  
-<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}\sum_{Z}q(z)log\frac{P(X,Z|\theta&space;)/q(z)}{P(Z|X,\theta&space;)/q(z))}&space;\\=&space;\sum_{Z}q(z)\frac{P(X,Z|\theta)}{q(z)}&space;-&space;\sum_{Z}q(z)\frac{P(Z|X,\theta&space;)}{q(z)}&space;\\=&space;\sum_{Z}q(z)\frac{P(X,Z|\theta)}{q(z)}&space;&plus;&space;KL_D(q(z)&space;||&space;P(Z|X,\theta&space;))&space;\\\geq&space;\sum_{Z}q(z)\frac{P(X,Z|\theta)}{q(z)}&space;"  />
+<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}\sum_{Z}q(Z)log\frac{P(X,Z|\theta&space;)/q(Z)}{P(Z|X,\theta&space;)/q(Z))}&space;\\=&space;\sum_{Z}q(Z)\frac{P(X,Z|\theta)}{q(Z)}&space;-&space;\sum_{Z}q(Z)\frac{P(Z|X,\theta&space;)}{q(Z)}&space;\\=&space;\sum_{Z}q(Z)\frac{P(X,Z|\theta)}{q(Z)}&space;&plus;&space;KL_D(q(Z)&space;||&space;P(Z|X,\theta&space;))&space;\\\geq&space;\sum_{Z}q(Z)\frac{P(X,Z|\theta)}{q(Z)}&space;"  />
+
+至此，我們得到了LOG-LIKLIHOOD的最小下界，只有當KLD=0時，等號才成立!  
+也就是:  
+<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}q(Z)=&space;P(X,Z|\theta)"  />  
+
+而因為q是無法觀測的，所以實務上我們會先讓q=P，然後進行後續運算。  
+也就是給定初始的theta，然後計算P。
+
+在初始theta之下，我們得到了q(z)。  
+這也就意味著我們能透過MLE來尋找下一個theta了!  
+
+<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}\hat{\theta&space;}&space;\\=&space;\underset{\theta&space;}{argmax}&space;\sum_{Z}q(Z)log\frac{P(X,Z|\theta)}{q(Z)}&space;\\=&space;\underset{\theta&space;}{argmax}&space;\sum_{Z}P(Z|X,\theta^{(i)})log\frac{P(X,Z|\theta)}{P(Z|X,\theta^{(i)})}&space;\\=&space;\underset{\theta&space;}{argmax}&space;\sum_{Z}P(Z|X,\theta^{(i)})(logP(X,Z|\theta)-log&space;P(Z|X,\theta^{(i)})&space;\\=&space;\underset{\theta&space;}{argmax}&space;\sum_{Z}P(Z|X,\theta^{(i)})logP(X,Z|\theta)&space;\\=&space;\underset{\theta&space;}{argmax}&space;E_{Z|X,\theta^{(i)}}[logP(X,Z|\theta)]"  />
+
+上面最後一式，就是E-Step在做的事情: 構造Q(theta, theta(i))  
+而尋找新的theta這步，就是M-Step在做的事情。  
+
+有了新的theta後，再帶回去原本的E-Step，把之前的初始theta換掉，再得到一次新的theta...循環下去。  
+這就是EM演算法的流程: **E**xpectation + **M**aximization!  
