@@ -1,3 +1,5 @@
+# 理論推導
+
 假設我們有數據 X 滿足: 
 <img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}X&space;=&space;(x_1,&space;x_2,&space;...&space;,&space;x_n)" />  且各隨機變數均為iid
 
