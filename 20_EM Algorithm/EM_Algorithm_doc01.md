@@ -16,7 +16,7 @@
 <img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}\sum_{Z}q(z)=1"/>
 
 所以我們會得到:  
-<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}P(X|\theta)=\frac{P(X,Z|\theta&space;)}{P(Z|X,\theta)/q(Z)}=\frac{P(X,Z|\theta&space;)/q(Z)}{P(Z|X,\theta)/q(Z)}" />
+<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}P(X|\theta)=\frac{P(X,Z|\theta&space;)}{P(Z|X,\theta)}=\frac{P(X,Z|\theta&space;)/q(Z)}{P(Z|X,\theta)/q(Z)}" />
 
 兩邊同時取log會得到:  
 <img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}logP(X|\theta)=log\frac{P(X,Z|\theta&space;)/q(Z)}{P(Z|X,\theta)/q(Z)}" />  
