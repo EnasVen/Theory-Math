@@ -4,7 +4,7 @@
 <img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}X&space;=&space;(x_1,&space;x_2,&space;...&space;,&space;x_n)" />  且各隨機變數均為iid
 
 未知參數則為theta，那麼我們可以得到log-liklihood為:  
-<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}l(\theta&space;|X)=log&space;P(X|\theta&space;)&space;=&space;log(\prod_{i=1}^{n}P(x_i|\theta&space;))=\sum_{i=1}^{n}logP(x_i|\theta&space;)" />
+<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}log&space;P(X|\theta&space;)&space;=&space;log(\prod_{i=1}^{n}P(x_i|\theta&space;))=\sum_{i=1}^{n}logP(x_i|\theta&space;)" />
 
 如果是沒有潛在變數z的情況(例如: K-Means)，那麼我們就可以透過MLE求得最佳的theta來最大化log-liklihood，也就是:  
 <img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}\hat{\theta}_{MLE}=\underset{\theta}{argmax}\&space;\sum_{i=1}^{n}logP(x_i|\theta&space;)" />
