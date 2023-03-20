@@ -10,7 +10,7 @@ GMM的流程就是從k個高斯模型中，根據權重選出一個模型，然�
 
 對於z，我們定義如下:
 <img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}z_i&space;=&space;0&space;\&space;\forall&space;i\neq&space;k&space;"  />  
-也就是說當第k個模型被選中的時候，它對應的k-t分量才會是1，其餘非k的位置都是0，有一點類似one-hot encoding的感覺。  
+也就是說當第k個模型被選中的時候，它對應的分量才會是1，其餘非k的位置都是0，有一點類似one-hot encoding的感覺。  
 
 由於Z是隱含變量，我們無法直接觀測，其先驗機率(prior)為: 
 <img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}p(z_i=1)=\alpha&space;_i&space;,&space;\&space;\forall&space;i=1,2...,k"  />  
