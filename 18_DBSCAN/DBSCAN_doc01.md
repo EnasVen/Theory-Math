@@ -12,13 +12,18 @@
 5. `border point`: 鄰域內的樣本數若小於minimum point，則稱為邊界點。  
 6. `noise point`:　噪音點，不屬於任何鄰域之樣本。
 7. `直達性質`: 當樣本X在核心樣本Y的鄰域內，則Y到X是有直達性質。  
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/18_DBSCAN/DBSCAN_pic01.png)
 8. `傳導性質`: 當核心樣本Y到核心樣本P3具有直達性質；而P3又對**邊界樣本**P2有直達性質，則稱Y到P2有傳導性質。  
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/18_DBSCAN/DBSCAN_pic02.png)
 9. `連接性質`: 當核心樣本O到邊界樣本Y以及X分別具有傳導性質，則稱X和Y具有連接性質。  
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/18_DBSCAN/DBSCAN_pic03.png)
 
 有了以上的定義後，我們可以推論得到:  
 對於一系列具備傳導性質的點來說，其鄰域範圍內的點都具備連接性質。  
 這些具備連接性質的點所形成的集合在DBSCAN內會被歸屬到同一群內。  
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/18_DBSCAN/DBSCAN_pic00.png)
 
 # 演算過程
 DBSCAN會隨機挑選一個點作為核心點，接著利用minimum point和epsilon來獲得那些具備連接性質的點，接著給這些點集合一個cluster編號。  
 接著尋找沒有被賦予cluster編號的樣本，在用同樣的方法進行，直到每一個樣本都獲得cluster(同時標記noise樣本點)。  
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/18_DBSCAN/DBSCAN_pic04.png)
