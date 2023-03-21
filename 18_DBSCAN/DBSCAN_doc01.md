@@ -23,7 +23,7 @@
 這些具備連接性質的點所形成的集合在DBSCAN內會被歸屬到同一群內。  
 ![Image](https://github.com/EnasVen/Theory-Math/blob/main/18_DBSCAN/DBSCAN_pic00.png)
 
-# 演算過程
+## 演算過程
 DBSCAN會隨機挑選一個點作為核心點，接著利用minimum point和epsilon來獲得那些具備連接性質的點，接著給這些點集合一個cluster編號。  
 接著尋找沒有被賦予cluster編號的樣本，在用同樣的方法進行，直到每一個樣本都獲得cluster(同時標記noise樣本點)。  
 ![Image](https://github.com/EnasVen/Theory-Math/blob/main/18_DBSCAN/DBSCAN_pic04.png)
