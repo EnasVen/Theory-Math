@@ -23,7 +23,10 @@ Gap Statistic定義為:
 <img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}E_{n}^{*}logW_k=\frac{1}{B}\sum_{b=1}^{B}log(W_{kb}^{*})" />  
 
 意思就是先透過Boostrap產生和原始數據相同shape的資料，接著對這份資料做KMeans。  
-重複多次後逼近真實值，即蒙地卡羅手法。  
+重複B次後逼近真實值，即蒙地卡羅手法。  
 
+同時需要計算sk來修正MC方法的誤差:  
+<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}\\&space;w'=\frac{1}{B}\sum_{b=1}^{B}logW_{kb}^{*}&space;\\sd(k)=\sqrt{\frac{1}{B}\sum_{b=1}^{B}(logW_{kb}^{*}-w')^2}&space;\\s_k&space;=&space;\sqrt{\frac{B&plus;1}{B}}sd(k)&space;" />  
 
+選擇滿足 <img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}Gap(k)\geq&space;Gap(k&plus;1)-s_{k&plus;1}" title="https://latex.codecogs.com/png.image?\inline \dpi{110}Gap(k)\geq Gap(k+1)-s_{k+1}" /> 的k值做為分群數量即可。  
 
