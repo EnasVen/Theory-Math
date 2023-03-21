@@ -37,7 +37,7 @@ Display learning path under serveral algorithms and math/stat knowledge !
 `15. 反向傳播演算法(Back Propagation)`  
 - [x]
 `16. K平均分群法(k-Means)`  
-- [ ]
+- [x]
 `17. K鄰近分類法(KNN)`  
 - [x]
 `18. K-Mediods(DBSCAN)`  
