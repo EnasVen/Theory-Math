@@ -3,6 +3,11 @@
 聽起來也挺合理的，畢竟越靠近的點簇歸屬在同一族群直覺上也make sense!  
 而名稱後面的Noise，則是在雜訊點的加入仍能做出效果不錯的分群，並能標示出雜訊。  
 
+下圖比較一下density base和KMeans的差異，可以看到對KMeans無法偵測離群值，對每一點都會進行分群。  
+而且KMeans除了要指定K之外，它的泛用性被資料分布侷限。  
+反而是density base的算法更robust。  
+![Image](https://github.com/EnasVen/Theory-Math/blob/main/18_DBSCAN/DBSCAN_pic05.png)
+
 ## 名詞解析
 在DBSCAN內有一些名詞需要先被定義，後面才能順利進行:  
 1. `metric`: 常用的距離函數，你可以選擇歐式距離、馬氏距離、曼哈頓距離...etc。  
