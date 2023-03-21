@@ -35,17 +35,17 @@ Display learning path under serveral algorithms and math/stat knowledge !
 `14. 支持向量機(SVM)`   
 - [x]
 `15. 反向傳播演算法(Back Propagation)`  
-- [ ]
+- [x]
 `16. K平均分群法(k-Means)`  
 - [ ]
 `17. K鄰近分類法(KNN)`  
-- [ ]
+- [x]
 `18. K-Mediods(DBSCAN)`  
 - [x]
 `19. 梯度下降(Gradient Decent)`  
 - [x]
 `20. EM演算法`  
-- [ ]
+- [x]
 `21. Gaussian Mixture Model`
 - [ ]
 `22. AutoEncoder與VAE`
