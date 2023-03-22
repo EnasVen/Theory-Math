@@ -24,3 +24,8 @@
 這時候稱為簡單線性迴歸(simple Linear Regression)。  
 而當變數x有多個的時候(假設有p個)，則稱為多元線性迴歸(Multiple Linear Regression):  
 <img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}y_i=\hat{\beta_0}&plus;\hat{\beta_1}x_1&plus;...&plus;\hat{\beta_p}x_p&plus;\varepsilon_i" />  
+
+對於每一個epsilon，我們會假設它服從常態分布，並具備固定的variance:  
+<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}\varepsilon_1...\varepsilon_n&space;\overset{iid}{\sim&space;}&space;N(0,\sigma^2)" />
+
+這也是我們實務上在做迴歸的時候，為什麼會去檢測殘差是否常態以及在0附近震盪的原因。  
