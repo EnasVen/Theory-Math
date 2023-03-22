@@ -7,7 +7,7 @@ Display learning path under serveral algorithms and math/stat knowledge !
 本篇內容包含以下項目(**順序亂排的，自己挑著看吧 QQ**):  
 - [x]
 `1. 主成分分析(PCA)`  
-- [ ]
+- [x]
 `2. 線性迴歸(Linear Regression)`  
 - [x]
 `3. 羅吉斯迴歸(Logistic Regression)`  
