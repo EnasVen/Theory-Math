@@ -19,3 +19,8 @@
 也就是說真實的y我們"期望"它能被樣本迴歸線再加上一個殘差(epsilon)來表示。  
 而epsilon前面那一包beta和x的線性組合，就是E(Y|x)，不過我們會更常用y hat來表示，意思就是這個y值是被估計出來的!  
 
+# 簡單線性迴歸 vs 多元線性迴歸
+上面的線性迴歸模型只有1個feature，也就是說只有一個x。  
+這時候稱為簡單線性迴歸(simple Linear Regression)。  
+而當變數x有多個的時候(假設有p個)，則稱為多元線性迴歸(Multiple Linear Regression):  
+<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}y_i=\hat{\beta_0}&plus;\hat{\beta_1}x_1&plus;...&plus;\hat{\beta_p}x_p&plus;\varepsilon_i" />  
