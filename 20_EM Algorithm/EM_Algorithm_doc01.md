@@ -26,7 +26,7 @@
 
 LHS: 由於跟Z無關，所以仍然維持原式。  
 RHS:  
-<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}\sum_{Z}q(Z)log\frac{P(X,Z|\theta&space;)/q(Z)}{P(Z|X,\theta&space;)/q(Z))}&space;\\=&space;\sum_{Z}q(Z)\frac{P(X,Z|\theta)}{q(Z)}&space;-&space;\sum_{Z}q(Z)\frac{P(Z|X,\theta&space;)}{q(Z)}&space;\\=&space;\sum_{Z}q(Z)\frac{P(X,Z|\theta)}{q(Z)}&space;&plus;&space;KL_D(q(Z)&space;||&space;P(Z|X,\theta&space;))&space;\\\geq&space;\sum_{Z}q(Z)\frac{P(X,Z|\theta)}{q(Z)}&space;"  />
+<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}\sum_{Z}q(Z)log\frac{P(X,Z|\theta&space;)/q(Z)}{P(Z|X,\theta&space;)/q(Z))}&space;\\=&space;\sum_{Z}q(Z)log\frac{P(X,Z|\theta)}{q(Z)}&space;-&space;\sum_{Z}q(Z)log\frac{P(Z|X,\theta&space;)}{q(Z)}&space;\\=&space;\sum_{Z}q(Z)log\frac{P(X,Z|\theta)}{q(Z)}&space;&plus;&space;KL_D(q(Z)&space;||&space;P(Z|X,\theta&space;))&space;\\\geq&space;\sum_{Z}q(Z)log\frac{P(X,Z|\theta)}{q(Z)}&space;"  />
 
 至此，我們得到了LOG-LIKLIHOOD的最小下界，只有當KLD=0時，等號才成立!  
 也就是:  
