@@ -12,7 +12,7 @@
 不同於傳統梯度下降，傳統梯度下降使用所有訓練樣本進行；而SGD就是一次跑1個樣本或mini-batch後計算單次梯度或是mini-batch梯度的平均後就更新一次參數。  
 樣本或mini-batch是隨機抽取的，所以才會稱為隨機梯度下降法!  
 
-# RMA Prop
+# RMS Prop
 為了解決error surface太過複雜，導致傳統梯度下降收斂太慢，學習率更新太慢而新增的方法。  
 <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;w_{t&plus;1}&space;=&space;w_t&space;-&space;g_t&space;*&space;\frac{\eta}{\sigma_t}\;&space;,&space;\;&space;where&space;\;&space;\sigma_t&space;=&space;\sqrt{\alpha&space;(\sigma_{t-1})^2&plus;(1-\alpha)(g_t)^2}&space;\;&space;,&space;\sigma_0&space;=&space;g_0&space;" title="w_{t+1} = w_t - g_t * \frac{\eta}{\sigma_t}\; , \; where \; \sigma_t = \sqrt{\alpha (\sigma_{t-1})^2+(1-\alpha)(g_t)^2} \; , \sigma_0 = g_0 " />
 
