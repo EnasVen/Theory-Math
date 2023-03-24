@@ -47,7 +47,7 @@ Display learning path under serveral algorithms and math/stat knowledge !
 `20. EM演算法`  
 - [x]
 `21. Gaussian Mixture Model`
-- [ ]
+- [x]
 `22. AutoEncoder與VAE`
 - [ ]
 `23. Attention機制`
