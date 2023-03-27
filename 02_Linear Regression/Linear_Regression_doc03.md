@@ -42,7 +42,7 @@ tr裡面那一包矩陣可以各自拆解(trace運算有linearity):
 這個定理證明起來也不會太難，我之後會放到附錄內，這邊我們就暫時先拿來用吧~
 
 首先我們知道sigma平方的不偏估計量可以被表示成:  
-<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}\sigma&space;\frac{n-(p&plus;1)}{\sigma^2}&space;\hat{\sigma}^2&space;=&space;\frac{1}{\sigma^2}\varepsilon'(I_{n&space;\cdot&space;n}-X(X'X)^{-1}X')\varepsilon&space;=&space;\left&space;(&space;\frac{\varepsilon&space;}{\sigma&space;}&space;\right&space;)'(I_{n&space;\cdot&space;n}-X(X'X)^{-1}X')\left&space;(&space;\frac{\varepsilon&space;}{\sigma&space;}&space;\right&space;)" />  
+<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}&space;\frac{n-(p&plus;1)}{\sigma^2}&space;\hat{\sigma}^2&space;=&space;\frac{1}{\sigma^2}\varepsilon'(I_{n&space;\cdot&space;n}-X(X'X)^{-1}X')\varepsilon&space;=&space;\left&space;(&space;\frac{\varepsilon&space;}{\sigma&space;}&space;\right&space;)'(I_{n&space;\cdot&space;n}-X(X'X)^{-1}X')\left&space;(&space;\frac{\varepsilon&space;}{\sigma&space;}&space;\right&space;)" />  
 化簡成這個形式，目的就是為了要套用上面的定理小工具。  
 
 我們可以確認看看中間那一包矩陣是不是idempotent:  
