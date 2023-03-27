@@ -26,7 +26,7 @@
 雖然模型內的beta參數我們成功地找到其估計量與對應的抽樣分布。  
 但模型內仍然還有一個未知參數待估計: sigma平方，也就是原先的殘差假設內常態分布的variance!  
 要估計sigma平方，我們先給出最終的定義式:  
-<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}Let&space;\&space;e&space;=&space;y&space;-&space;X&space;\hat{\beta&space;}&space;\\&space;\Rightarrow&space;\hat{\sigma}^2=\frac{n-(p&plus;1)}{1}e'e=&space;\frac{n-(p&plus;1)}{1}\sum(y_i-x_i\hat{\beta})^2" />  
+<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}Let&space;\&space;e&space;=&space;y&space;-&space;X&space;\hat{\beta&space;}&space;\\&space;\Rightarrow&space;\hat{\sigma}^2=\frac{1}{n-(p&plus;1)}e'e=&space;\frac{1}{n-(p&plus;1)}\sum(y_i-x_i\hat{\beta})^2" />  
 
 同樣的我們可以證明sigma平方hat在取期望值後仍然是不偏的(unbiased):  
 <img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}E(\hat{\sigma}^2)=E(\frac{e'e}{n-(p&plus;1)})&space;\\\because&space;e&space;\\&space;=y-X\hat{\beta}&space;\\&space;=y-X(X'X)^{-1}X'y&space;\\=(I_{n&space;\cdot&space;n}-X(X'X)^{-1}X')(X\beta&space;&plus;\varepsilon)&space;\\=(I_{n&space;\cdot&space;n}-X(X'X)^{-1}X')\varepsilon&space;&space;\\\therefore&space;E(e'e)&space;\\&space;=tr(E(e'e))\\&space;=E(tr(e'e))\\&space;=&space;E&space;tr(\varepsilon'(I_{n&space;\cdot&space;n}-X(X'X)^{-1}X'))\varepsilon)&space;\\&space;=&space;tr(I_{n&space;\cdot&space;n}-X(X'X)^{-1}X'))E(\varepsilon&space;\varepsilon')&space;\\=&space;\sigma^2&space;tr(I_{n&space;\cdot&space;n}-X(X'X)^{-1}X'))"/>  
