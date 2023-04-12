@@ -27,7 +27,7 @@ Lasso的數學式子和Ridge類似，差別只在限制式不同:
 2.同時具備Ridge預測結果穩定性以及Lasso的快速運算效率。  
   
 Elastic Net其實就是綜合Ridge與Lasso的混合方法，它的數學式如下:  
-<img src="https://latex.codecogs.com/gif.image?\dpi{110}\beta&space;\hat{\beta}_{elastic}=\underset{\beta&space;}{argmin}(&space;\left\|y-X\beta&space;\right\|^2&space;&plus;&space;\lambda(&space;(1-\alpha)\left\|\beta&space;\right\|^2&plus;\alpha\left\|\beta&space;\right\|_1&space;)&space;)"  />  
+<img src="https://latex.codecogs.com/gif.image?\dpi{110}\hat{\beta}_{elastic}=\underset{\beta&space;}{argmin}(&space;\left\|y-X\beta&space;\right\|^2&space;&plus;&space;\lambda(&space;(1-\alpha)\left\|\beta&space;\right\|^2&plus;\alpha\left\|\beta&space;\right\|_1&space;)&space;)"  />  
   
 等於是把L1與L2懲罰項做一個線性組合!  
 將L1,L2與Elastic Net在圖形上做比較:  
