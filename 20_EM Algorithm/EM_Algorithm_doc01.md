@@ -30,7 +30,7 @@ RHS:
 
 至此，我們得到了LOG-LIKLIHOOD的最小下界，只有當KLD=0時，等號才成立!  
 也就是:  
-<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}q(Z)=&space;P(Z|X, \theta)"  />  
+<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}q(Z)=&space;P(Z|X,\theta)"  />  
 
 而因為q是無法觀測的，所以實務上我們會先讓q=P，然後進行後續運算。  
 也就是給定初始的theta，然後計算P。
