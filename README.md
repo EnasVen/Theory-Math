@@ -17,7 +17,7 @@ Display learning path under serveral algorithms and math/stat knowledge !
 `5. 信息理論(Information Theory)`  
 - [x]
 `6. 階層分群(Hierarchical Clustering)`  
-- [ ]
+- [x]
 `7. 集成學習(Ensemble)` 
 - [x]
 `8. 決策樹(Decision Tree)`  
