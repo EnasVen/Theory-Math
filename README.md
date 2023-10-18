@@ -55,5 +55,5 @@ Display learning path under serveral algorithms and math/stat knowledge !
 `24. Transformer`  
 - [ ]
 `25. HPO相關演算法`
-- [ ]
+- [x]
 `26. Kernel Density Estimation`  
