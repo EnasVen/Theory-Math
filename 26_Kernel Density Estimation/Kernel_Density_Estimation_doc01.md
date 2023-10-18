@@ -18,9 +18,9 @@ GMM透過EM algorithm來估計參數；KDE則無需估計參數，只要選擇�
 其中分子N代表落在[x-h,x+h]閉區間的資料個數，分母N即為總資料數。  
 
 估計函數f可以用更數學的方式來表達:  
-<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}\hat{f}(x)\\=\frac{1}{2hN}\displaystyle\lim_{h\to&space;0}\sum_{i=1}^{N}I(x_i\in[x-h,x&plus;h])\\=\frac{1}{hN}\displaystyle\lim_{h\to&space;0}\sum_{i=1}^{N}\frac{1}{2}I(\frac{|x-x_i|}{h}\leq&space;1&space);"/>  
+<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}\hat{f}(x)\\=\frac{1}{2hN}\displaystyle\lim_{h\to&space;0}\sum_{i=1}^{N}I(x_i\in[x-h,x&plus;h])\\=\frac{1}{hN}\displaystyle\lim_{h\to&space;0}\sum_{i=1}^{N}\frac{1}{2}I(\frac{|x-x_i|}{h}\leq&space;1&space;)"/>  
 接著做一個變換，K即為我們的kernel function:  
-<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}Let\;K(t)=\frac{1}{2}I(t\leq&space;1)\Rightarrow\hat{f}(x)=\frac{1}{Nh}\sum_{i=1}^{N}K(\frac{x-x_i}{h})"/>  
+<img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}Let\;K(t)=\frac{1}{2}I(t\leq&space;1)\Rightarrow\hat{f}(x)=\displaystyle\lim_{h\to&space;0}\frac{1}{Nh}\sum_{i=1}^{N}K(\frac{x-x_i}{h})"/>  
 
 但是這個Kernel function是有限制的，限制條件怎麼獲得?  
 透過機率密度函數積分為1的特性:  
