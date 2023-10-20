@@ -57,3 +57,5 @@ Display learning path under serveral algorithms and math/stat knowledge !
 `25. HPO相關演算法`
 - [x]
 `26. Kernel Density Estimation`  
+- [x]
+`27. ARIMA`  
