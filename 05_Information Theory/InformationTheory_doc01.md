@@ -28,7 +28,7 @@
 <img src="https://latex.codecogs.com/png.image?\dpi{110}D_{KL}(P||Q)=\sum_{x}-p(x)*ln(\frac{q(x)}{p(x)})"  />  
 
 補充 : information gain(資訊增益):  
-<img src="https://latex.codecogs.com/png.image?\dpi{110}I(X,Y)=D_{KL}(P(X,Y)||P(X)P(Y))=&space;H(Y)&space;-&space;H(Y|X|)" />  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}I(X,Y)=D_{KL}(P(X,Y)||P(X)P(Y))=&space;H(Y)&space;-&space;H(Y|X)" />  
 (在已知X的情況下觀察到Y的不確定性減少了多少)  
 # Cross Entropy  
 簡易解釋 : 在機器學習中用來衡量真實分布與預測分布之間的差異。  
