@@ -52,10 +52,16 @@ Display learning path under serveral algorithms and math/stat knowledge !
 - [ ]
 `23. Attention機制`
 - [ ]
-`24. Transformer`  
+`24. Stable Diffusion`  
 - [ ]
-`25. HPO相關演算法`
+`25. Rotary Position Embedding`
 - [x]
 `26. Kernel Density Estimation`  
 - [x]
-`27. ARIMA`  
+`27. ARIMA`
+- [ ]
+`28. PiSSA`
+- [ ]
+`29. LLM Parameter Calculation`
+- [ ]
+`30. TBD`  
